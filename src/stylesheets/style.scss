@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700');
+
+$primary: rgb(198, 11, 31);
+
+html {
+    background: black;
+    color: white;
+}
+
+header {
+    img {
+        width: 100%;
+    }
+}
+
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 16px 8px;
+    background: black;
+    a {
+        display: block;
+        padding: 5px 15px;
+        font-size: 16px;
+        font-weight: bold;
+        color: white;
+        text-decoration: none;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+    }
+    .order {
+        background: $primary;
+        border: 2px solid white;
+        border-radius: 15px;
+    }
+    ul {
+        display: flex;
+        justify-content: space-around;
+    }
+    li {
+        white-space: nowrap;
+    }
+}
+
+main {
+    margin: 5px;
+    background: url('../images/background.webp');
+    .description {
+        font-size: 18px;
+        line-height: 25px;
+        padding: 50px 15px;
+        background: black;
+        font-size: 18px;
+        text-align: center;
+    }
+    p {
+        margin-bottom: .5em;
+        line-height: 1.3em;
+    }
+}
+
+
+
+footer {
+    color: #CCC;
+    .logo {
+        filter: brightness(0) invert(1);
+    }
+}
+#businessinfo {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 15px;
+    text-align: center;
+    line-height: 1.3em;
+    h2 {
+        text-transform: capitalize;
+        color: $primary;
+        margin-bottom: .5em;
+    }
+}
+.sociallinks {
+    background: #1F1F1F;
+    display: flex;
+    justify-content: center;
+    padding: 16px;
+    img {
+        width: 48px;
+        padding: 8px;
+        margin: 0 16px;
+    }
+}
+.invert {
+    filter: brightness(0) invert(1);
+}
+.location {
+    background: #191919;
+    padding: 15px;
+    display: flex;
+    justify-content: space-around;
+    img {
+        height: 5em;
+    }
+}
