@@ -1,0 +1,1 @@
+"use strict";function openTab(e,t){var a,s;a=document.getElementsByClassName("tabcontent");for(var l=0;l<a.length;l++)a[l].style.display="none";s=document.getElementsByClassName("tablinks");for(var n=0;n<s.length;n++)s[n].className=s[n].className.replace(" active","");document.getElementById(t).style.display="block",e.currentTarget.className+=" active"}
