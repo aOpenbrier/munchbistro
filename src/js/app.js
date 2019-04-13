@@ -1,3 +1,17 @@
+
+
+
+function openMenu() {
+    document.getElementById('nav-collapse').classList.toggle('open')
+}
+
+// Close the dropdown if the user clicks outside of it
+window.onclick = function (event) {
+    if (!event.target.matches('#navtrigger')) {
+        document.getElementById('nav-collapse').classList.remove('open');
+    }
+}
+
 function openTab(evt, cityName) {
     // Declare all variables
     let tabcontent
@@ -17,6 +31,8 @@ function openTab(evt, cityName) {
     document.getElementById(cityName).style.display = "block"
     evt.currentTarget.className += " active"
 }
+
+document.getElementById('defaultOpen').click()
 
 function checkScroll(event)
 {
