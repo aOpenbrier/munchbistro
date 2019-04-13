@@ -22,6 +22,7 @@
     <meta name="theme-color" content="#c4001b">
     <link rel="shortcut icon" href="https://www.munchbistro.com/assets/images/favicon.png">
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab:700" rel="stylesheet">
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/style.css">
 </head>
@@ -30,11 +31,20 @@
     <header>
         <nav>
             <ul>
-                <li><a class='order' href="https://www.toasttab.com/munch-bistro/v2/online-order#!/">Order Online</a></li>
+                <li>
+                    <a class='order' href="https://www.toasttab.com/munch-bistro/v2/online-order#!/"><i class="material-icons md-18">launch</i>Order Online</a>
+                </li>
                 <li><a href="#top">Home</a></li>
                 <li><a href="#menu">Our Menu</a></li>
-                <li><a href="https://www.yelp.com/waitlist/munch-bistro-thai-with-a-twist-huntington-beach-3">Waitlist</a></li>
                 <li><a href="#location">Contact Us</a></li>
+                <li>
+                     <a href="https://www.yelp.com/waitlist/munch-bistro-thai-with-a-twist-huntington-beach-3"><i class="material-icons md18">launch</i>Waitlist</a>
+                </li>
+                <li>
+                    <i class="material-icons">
+                        menu
+                    </i>
+                </li>
             </ul>
         </nav>
         <div id="top"></div>
@@ -50,37 +60,43 @@
                 Whether you are an omnivore, vegetarian, or vegan… whether you are a fan of our 33 craft beers on tap, our saké and wine options, or our unique SABÉ cocktails… whether you favor timeless classics like Pad Thai, Pad See Ew and Green Curry... or you want to try something completely unique like our Tom Yum Flatbread Pizza or our Orange Chicken Sandwich, we will offer you the freshest, tastiest, and most delicious authentic Thai food and Thai inspired dishes in Orange County.
             </p>
         </div>
-        <div id="menu">
-            <div class="menutabs">
-                <a class="tablinks active" id='defaultOpen' onclick="openTab(event, 'menumain')">Main Menu</a>
-                <a class="tablinks" onclick="openTab(event, 'menulunch')">Lunch Specials</a>
-                <a class="tablinks" onclick="openTab(event, 'menuveg')">Vegetarian & Vegan</a>
-                <a class="tablinks" onclick="openTab(event, 'menuwine')">Wine</a>
-                <a class="tablinks" onclick="openTab(event, 'menubeer')">Craft Beer On Tap</a>
-            </div>
-            
-            <!-- Tab content -->
-            <div id="menumain" class="tabcontent">
-                <h3>Main Menu</h3>
-                <p></p>
-            </div>
-            
-            <div id="menulunch" class="tabcontent">
-                <h3>Lunch Specials</h3>
-                <p></p>
-            </div>
-            
-            <div id="menuveg" class="tabcontent">
-                <h3>Vegetarian & Vegan</h3>
-                <p></p>
-            </div>
-            <div id="menuwine" class="tabcontent">
-                <h3>Wine</h3>
-                <p></p>
-            </div>
-            <div id="menubeer" class="tabcontent">
-                <h3>Craft Beer on Tap</h3>
-                <p></p>
+        <div class="menucontainer">
+            <div id="menu">
+                <div class="menuheader">
+                    <div class="menutabs dragscroll">
+                        <i id='indicator-left' class="material-icons">arrow_back_ios</i>
+                        <a class="tablinks active" id='defaultOpen' onclick="openTab(event, 'menumain')">Main Menu</a>
+                        <a class="tablinks" onclick="openTab(event, 'menulunch')">Lunch Specials</a>
+                        <a class="tablinks" onclick="openTab(event, 'menuveg')">Vegetarian & Vegan</a>
+                        <a class="tablinks" onclick="openTab(event, 'menuwine')">Wine</a>
+                        <a class="tablinks" onclick="openTab(event, 'menubeer')">Craft Beer On Tap</a>
+                        <i id="indicator-right" class="material-icons">arrow_forward_ios</i>
+                    </div>
+                </div>
+                    
+                <!-- Tab content -->
+                <div id="menumain" class="tabcontent">
+                    <h3>Main Menu</h3>
+                    <p></p>
+                </div>
+
+                <div id="menulunch" class="tabcontent">
+                    <h3>Lunch Specials</h3>
+                    <p></p>
+                </div>
+
+                <div id="menuveg" class="tabcontent">
+                    <h3>Vegetarian & Vegan</h3>
+                    <p></p>
+                </div>
+                <div id="menuwine" class="tabcontent">
+                    <h3>Wine</h3>
+                    <p></p>
+                </div>
+                <div id="menubeer" class="tabcontent">
+                    <h3>Craft Beer on Tap</h3>
+                    <p></p>
+                </div>
             </div>
         </div>
     </main>
@@ -119,10 +135,10 @@
             </div>
         </div>
     </footer>
-    <!-- <script src="./assets/js/dragscroll.js"></script> -->
+    <script src="./assets/js/dragscroll.js"></script>
     <script src="./assets/js/app.js"></script>
     <script type='text/javascript'>
-    document.getElementById('defaultOpen').click()
+        document.getElementById('defaultOpen').click()
     </script>
 </body>
 
