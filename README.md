@@ -15,10 +15,10 @@ node --version
 ```
 If you haven't already, install [Node.js](https://nodejs.org/en/download/)
 
-## Technogolies Used
+## Technologies Used
 - [Node.js](https://nodejs.org) - Execute JavaScript outside of the browser
 - [Gulp.js](httsp://gulpjs.com) - Streaming build system for front-end development
-
+- [Sass](https://sass-lang.com/) - Syntactically Awesome Style Sheets. CSS pre-processor
 ## Author
 Adam Openbrier
  &bull; [Portfolio](https://aopenbrier.github.io/portfolio.html)
