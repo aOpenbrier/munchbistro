@@ -3,18 +3,20 @@ const { task, src } = gulp
 const sass = require('gulp-sass')
 const autoprefixer = require('gulp-autoprefixer')
 const cssmin = require('gulp-cssnano')
+const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
 const ghPages = require('gulp-gh-pages')
 const cssInput = './stylesheets/*.scss'
 const cssOutput = '../public/assets/css'
 const jsInput = './js/*.js'
 const jsOutput = '../public/assets/js'
+const ghpages = require('gh-pages');
 
 task('css', () => 
         // Find all `.scss` files from the `stylesheets/` folder
         src(cssInput)
         // Run Sass on those files
-        .pipe(sass())
+        .pipe(sass().on('error', sass.logError))
         // Add vendor prefixes for browsers over 5% of US usage
         .pipe(autoprefixer('>1% in US'))
         //Minify the css
@@ -25,6 +27,10 @@ task('css', () =>
 
 task('javascript', () => 
     src(jsInput)
+    // transpile to es2015
+    .pipe(babel({
+        presets: ['@babel/env']
+    }))
     // minify/uglify js
     .pipe(uglify())
     // Write to public folder
@@ -32,7 +38,7 @@ task('javascript', () =>
 )
 
 
-task('deploy', () => 
-    src('./public')
-    .pipe(ghPages())
-)
+task('deploy', function(done) {
+    ghpages.publish('../public', function (err) { console.log(err) })
+    done()
+})
