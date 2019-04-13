@@ -1,6 +1,4 @@
-@import url('https://fonts.googleapis.com/css?family=Roboto+Slab:700');
-
-$primary: rgb(198, 11, 31);
+$primary: #c4001b;
 
 html {
     background: black;
@@ -18,6 +16,10 @@ nav {
     width: 100%;
     padding: 16px 8px;
     background: black;
+    .material-icons {
+        vertical-align: top;
+        font-size: inherit;
+    }
     a {
         display: block;
         padding: 5px 15px;
@@ -28,76 +30,162 @@ nav {
         text-transform: uppercase;
         letter-spacing: 2px;
     }
+
     .order {
         background: $primary;
         border: 2px solid white;
         border-radius: 15px;
     }
+
     ul {
         display: flex;
-        justify-content: space-around;
+        justify-content: space-between;
+        align-items: center;
     }
+
     li {
         white-space: nowrap;
     }
 }
 
 main {
-    margin: 5px;
-    background: url('../images/background.webp');
+    
+
     .description {
         font-size: 18px;
         line-height: 25px;
         padding: 50px 15px;
-        background: black;
         font-size: 18px;
         text-align: center;
     }
+
     p {
         margin-bottom: .5em;
         line-height: 1.3em;
     }
 }
 
+.menucontainer {
+    background: url('../images/background.webp');
+    padding: 50px 15px;
+}
+
+#menu {
+    margin: 15px;
+    background: white;
+}
+.menuheader {
+    position: relative;
+    padding: 16px;
+}
+.menutabs {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    overflow-y: hidden;
+    overflow-x: auto;
+    white-space: nowrap;
+    text-transform: uppercase;
+    i {
+        color: black;
+        position: absolute;
+        text-shadow: -3px 0 1px #fff,
+        -5px 0 2px #fff,
+        3px 0px 2px #fff,
+        5px 0px 2px #fff;
+    }
+    
+    a {
+        font-size: 18px;
+        letter-spacing: 2px;
+        display: inline-block;
+        border-top: 1px solid black;
+        border-bottom: 1px solid black;
+        padding: 9px;
+        transition: 0.2s;
+        color: black;
+        text-decoration: none;
+        margin: 0 4px;
+    }
+    a.active {
+        color: $primary;
+        border-top: 1px solid $primary;
+        border-bottom: 1px solid $primary;
+        font-weight: 600;
+    }
+}
+
+@media screen and (pointer: fine) {
+    .menutabs {
+        overflow: hidden;
+    }
+}
+@media screen and (max-width: 480px){
+    .menutabs a {
+        white-space: normal;
+        font-size: 16px;
+    }
+}
+
+#indicator-left {
+    left: 0;
+    padding-left: 8px;
+    width: 24px
+}
+#indicator-right {
+    right: 0;
+}
+
+/* Style the tab content */
+.tabcontent {
+    color: black;
+    display: none;
+    padding: 6px 12px;
+}
+
 
 
 footer {
     color: #CCC;
-    .logo {
-        filter: brightness(0) invert(1);
-    }
 }
+
 #businessinfo {
     display: flex;
     justify-content: space-around;
     padding: 50px 15px;
     text-align: center;
     line-height: 1.3em;
+
     h2 {
         text-transform: capitalize;
         color: $primary;
         margin-bottom: .5em;
     }
 }
+
 .sociallinks {
     background: #1F1F1F;
     display: flex;
     justify-content: center;
     padding: 16px;
+
     img {
         width: 48px;
         padding: 8px;
         margin: 0 16px;
     }
 }
+
 .invert {
     filter: brightness(0) invert(1);
 }
+
 .location {
     background: #191919;
     padding: 15px;
     display: flex;
     justify-content: space-around;
+
     img {
         height: 5em;
     }
