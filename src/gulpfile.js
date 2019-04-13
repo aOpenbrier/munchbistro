@@ -5,12 +5,11 @@ const autoprefixer = require('gulp-autoprefixer')
 const cssmin = require('gulp-cssnano')
 const babel = require('gulp-babel')
 const uglify = require('gulp-uglify')
-const ghPages = require('gulp-gh-pages')
 const cssInput = './stylesheets/*.scss'
 const cssOutput = '../public/assets/css'
 const jsInput = './js/*.js'
 const jsOutput = '../public/assets/js'
-const ghpages = require('gh-pages');
+const ghPages = require('gh-pages');
 
 task('css', () => 
         // Find all `.scss` files from the `stylesheets/` folder
@@ -39,6 +38,6 @@ task('javascript', () =>
 
 
 task('deploy', function(done) {
-    ghpages.publish('../public', function (err) { console.log(err) })
+    ghPages.publish('../public', function (err) { console.log(err) })
     done()
 })
