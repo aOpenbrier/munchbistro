@@ -13,6 +13,7 @@ header {
 
 nav {
     position: fixed;
+    top: 0;
     width: 100%;
     padding: 16px 8px;
     background: black;
@@ -31,16 +32,19 @@ nav {
         letter-spacing: 2px;
     }
 
-    .order {
+    .order a {
         background: $primary;
-        border: 2px solid white;
+        border: 1px solid white;
         border-radius: 15px;
     }
-
+    .hamburger {
+        display: none;
+    }
     ul {
         display: flex;
         justify-content: space-between;
         align-items: center;
+        transition: right 0.5s cubic-bezier(0.2, 0.3, 0.2, 1);
     }
 
     li {
@@ -48,8 +52,75 @@ nav {
     }
 }
 
+@media only screen and (max-width: 900px) {
+    nav {
+        position: relative;
+        z-index: 1;
+        padding: 0;
+        ul {
+            position: fixed;
+            top: 0;
+            right: -50vh;
+            height: 100vh;
+            width: 50vw;
+            flex-direction: column;
+            justify-content: space-around;
+            padding: 25vh 0;
+            background: rgba(0, 0, 0, .7);
+            transition: right 1s;
+        }
+        .open {
+            right: 0;
+        }
+        .order {
+            position: fixed;
+            bottom: 32px;
+            right: 32px;
+            .material-icons {
+                vertical-align: middle;
+            }
+            a {
+            padding: 0px;
+            border: none;
+            border-radius: 50%;
+            letter-spacing: 0;
+            height: 64px;
+            width: 64px;
+            line-height: 64px;
+            font-size: 12px;
+            text-align: center; 
+            }
+        }
+
+        .hamburger {
+            display: block;
+            position: fixed;
+            top: 0;
+            right: 0;
+        }
+    }
+
+    .hamburger i.material-icons {
+        padding: 12px;
+        font-size: 24px;
+        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7),
+        -1px -1px 0px rgba(0, 0, 0, .3);
+    }
+
+    .hidemobile {
+        display: none;
+    }
+
+}
+
+@media only screen and (max-width: 500px) {
+    nav ul {
+        width: 100vw;
+        right: -100vw;
+    }
+}
+
 main {
-    
 
     .description {
         font-size: 18px;
@@ -66,7 +137,7 @@ main {
 }
 
 .menucontainer {
-    background: url('../images/background.webp');
+    background: url('../images/background.png');
     padding: 50px 15px;
 }
 
@@ -74,10 +145,12 @@ main {
     margin: 15px;
     background: white;
 }
+
 .menuheader {
     position: relative;
     padding: 16px;
 }
+
 .menutabs {
     display: flex;
     justify-content: space-between;
@@ -86,15 +159,16 @@ main {
     overflow-x: auto;
     white-space: nowrap;
     text-transform: uppercase;
+
     i {
         color: black;
         position: absolute;
         text-shadow: -3px 0 1px #fff,
-        -5px 0 2px #fff,
-        3px 0px 2px #fff,
-        5px 0px 2px #fff;
+            -5px 0 2px #fff,
+            3px 0px 2px #fff,
+            5px 0px 2px #fff;
     }
-    
+
     a {
         font-size: 18px;
         letter-spacing: 2px;
@@ -107,6 +181,7 @@ main {
         text-decoration: none;
         margin: 0 4px;
     }
+
     a.active {
         color: $primary;
         border-top: 1px solid $primary;
@@ -120,7 +195,8 @@ main {
         overflow: hidden;
     }
 }
-@media screen and (max-width: 480px){
+
+@media screen and (max-width: 480px) {
     .menutabs a {
         white-space: normal;
         font-size: 16px;
@@ -132,6 +208,7 @@ main {
     padding-left: 8px;
     width: 24px
 }
+
 #indicator-right {
     right: 0;
 }
