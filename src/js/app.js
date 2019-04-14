@@ -38,16 +38,22 @@ function checkScroll(event)
 {
     const elem = event.currentTarget
     const maxScrollLeft = elem.scrollWidth - elem.clientWidth;
-    if (elem.leftScroll < maxScrollLeft) {
+    console.log('left scroll max: ' + elem.scrollLeft + " of " + maxScrollLeft)
+    if (elem.scrollLeft < maxScrollLeft - 1 ) {
         // TODO: show right arrow
+        document.getElementById('indicator-right').style.display = 'block'
     }
     else {
         // TODO: hide right arrow
+        document.getElementById('indicator-right').style.display = 'none'
     }
-    if (elem.leftScroll > 0) {
+    if (elem.scrollLeft > 1) {
         // TODO: show left arrow
+        document.getElementById('indicator-left').style.display = 'block'
     }
     else {
         // TODO: hide left arrow
+        document.getElementById('indicator-left').style.display = 'none'
+
     }
 }
