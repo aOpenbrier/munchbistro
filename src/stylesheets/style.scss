@@ -17,10 +17,12 @@ nav {
     width: 100%;
     padding: 16px 8px;
     background: black;
+
     .material-icons {
         vertical-align: top;
         font-size: inherit;
     }
+
     a {
         display: block;
         padding: 5px 15px;
@@ -34,12 +36,13 @@ nav {
 
     .order a {
         background: $primary;
-        border: 1px solid white;
         border-radius: 15px;
     }
+
     .hamburger {
         display: none;
     }
+
     ul {
         display: flex;
         justify-content: space-between;
@@ -57,6 +60,7 @@ nav {
         position: relative;
         z-index: 1;
         padding: 0;
+
         ul {
             position: fixed;
             top: 0;
@@ -69,26 +73,29 @@ nav {
             background: rgba(0, 0, 0, .7);
             transition: right 1s;
         }
+
         .open {
             right: 0;
         }
+
         .order {
             position: fixed;
             bottom: 32px;
             right: 32px;
+
             .material-icons {
                 vertical-align: middle;
             }
+
             a {
-            padding: 0px;
-            border: none;
-            border-radius: 50%;
-            letter-spacing: 0;
-            height: 64px;
-            width: 64px;
-            line-height: 64px;
-            font-size: 12px;
-            text-align: center; 
+                padding: 0px;
+                border-radius: 50%;
+                letter-spacing: 0;
+                height: 64px;
+                width: 64px;
+                line-height: 64px;
+                font-size: 12px;
+                text-align: center;
             }
         }
 
@@ -104,7 +111,7 @@ nav {
         padding: 12px;
         font-size: 24px;
         text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7),
-        -1px -1px 0px rgba(0, 0, 0, .3);
+            -1px -1px 0px rgba(0, 0, 0, .3);
     }
 
     .hidemobile {
@@ -138,11 +145,10 @@ main {
 
 .menucontainer {
     background: url('../images/background.png');
-    padding: 50px 15px;
+    padding: 50px 50px;
 }
 
 #menu {
-    margin: 15px;
     background: white;
 }
 
@@ -151,7 +157,7 @@ main {
     padding: 16px;
 }
 
-.menutabs {
+#menutabs {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -159,7 +165,6 @@ main {
     overflow-x: auto;
     white-space: nowrap;
     text-transform: uppercase;
-
     i {
         color: black;
         position: absolute;
@@ -178,6 +183,7 @@ main {
         padding: 9px;
         transition: 0.2s;
         color: black;
+        text-align: center;
         text-decoration: none;
         margin: 0 4px;
     }
@@ -191,14 +197,33 @@ main {
 }
 
 @media screen and (pointer: fine) {
-    .menutabs {
+    #menutabs {
         overflow: hidden;
     }
 }
 
-@media screen and (max-width: 480px) {
-    .menutabs a {
+@media screen and (max-width: 900px) {
+    .menucontainer {
+        padding: 50px 15px;
+    }
+
+    #menutabs a {
+        //non-wrapping lines taller
+        box-sizing: content-box;
+        line-height: 2em;
+    }
+
+    #menutabs .menutab-wrap {
+        // use non-breaking spaces (&nbsp;) to limit where tabs wrap
+        line-height: 1em;
         white-space: normal;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+
+    #menutabs a {
         font-size: 16px;
     }
 }
