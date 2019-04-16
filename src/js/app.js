@@ -1,6 +1,3 @@
-
-
-
 function openMenu() {
     document.getElementById('nav-collapse').classList.toggle('open')
 }
@@ -32,28 +29,64 @@ function openTab(evt, cityName) {
     evt.currentTarget.className += " active"
 }
 
-document.getElementById('defaultOpen').click()
+// wait until finished dragscroll-ing to update arrows
+function thenUpdateArrows() {
+    document.addEventListener('mouseup', updateArrows)
+}
 
-function checkScroll(event)
-{
-    const elem = event.currentTarget
-    const maxScrollLeft = elem.scrollWidth - elem.clientWidth;
-    console.log('left scroll max: ' + elem.scrollLeft + " of " + maxScrollLeft)
-    if (elem.scrollLeft < maxScrollLeft - 1 ) {
-        // TODO: show right arrow
+function updateArrows() {
+    document.removeEventListener('mouseup', updateArrows)
+    const el = document.getElementById('menutabs')
+    const maxScrollLeft = el.scrollWidth - el.clientWidth
+    console.log('left scroll max: ' + el.scrollLeft + " of " + maxScrollLeft)
+    if (el.scrollLeft < maxScrollLeft - 1 ) {
+        // Show right arrow
         document.getElementById('indicator-right').style.display = 'block'
     }
     else {
-        // TODO: hide right arrow
+        // Hide right arrow
         document.getElementById('indicator-right').style.display = 'none'
     }
-    if (elem.scrollLeft > 1) {
-        // TODO: show left arrow
+    if (el.scrollLeft > 1) {
+        // Show left arrow
         document.getElementById('indicator-left').style.display = 'block'
     }
     else {
-        // TODO: hide left arrow
+        // Hide left arrow
         document.getElementById('indicator-left').style.display = 'none'
-
     }
 }
+
+function arrowLeft() {
+    const el = document.getElementById('menutabs')
+    el.style.scrollBehavior = 'smooth'
+    // scroll far enough without passing any content
+    if (el.scrollWidth > el.clientWidth * 2) {
+        el.scrollLeft -= el.clientWidth * 0.7
+    }
+    else {
+        el.scrollLeft = 0
+    }
+    el.style.scrollBehavior = 'auto'
+    // smooth scroll behavior delays leftScroll update
+    setTimeout(updateArrows, 500)
+}
+
+function arrowRight() {
+    const el = document.getElementById('menutabs')
+    el.style.scrollBehavior = 'smooth'
+    // scroll far enough without passing any content
+    if (el.scrollWidth > el.clientWidth * 2) {
+        el.scrollLeft += el.clientWidth * 0.7
+    }
+    else {
+        el.scrollLeft += el.scrollWidth
+    }
+    el.style.scrollBehavior = 'auto'
+    // smooth scroll behavior delays leftScroll update
+    setTimeout(updateArrows, 500)
+}
+
+// initialize page
+document.getElementById('defaultOpen').click()
+updateArrows()
