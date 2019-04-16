@@ -63,14 +63,14 @@
         <div class="menucontainer">
             <div id="menu">
                 <div class="menuheader">
-                    <div class="menutabs dragscroll" onscroll="checkScroll(event)">
-                        <i id='indicator-left' class="material-icons">arrow_back_ios</i>
-                        <a class="tablinks" onclick="openTab(event, 'menuveg')">Vegetarian & Vegan</a>
+                    <div id="menutabs" class="dragscroll" onmousedown="thenUpdateArrows()">
+                        <i id='indicator-left' class="material-icons" onclick="arrowLeft()">arrow_back_ios</i>
+                        <a class="tablinks menutab-wrap" onclick="openTab(event, 'menuveg')">Vegetarian &&nbsp;Vegan</a>
                         <a class="tablinks" onclick="openTab(event, 'menulunch')">Lunch Specials</a>
                         <a class="tablinks active" id='defaultOpen' onclick="openTab(event, 'menumain')">Main Menu</a>
                         <a class="tablinks" onclick="openTab(event, 'menuwine')">Wine</a>
-                        <a class="tablinks" onclick="openTab(event, 'menubeer')">Craft Beer On Tap</a>
-                        <i id="indicator-right" class="material-icons">arrow_forward_ios</i>
+                        <a class="tablinks menutab-wrap" onclick="openTab(event, 'menubeer')">Craft&nbsp;Beer On&nbsp;Tap</a>
+                        <i id="indicator-right" class="material-icons" onclick="arrowRight()">arrow_forward_ios</i>
                     </div>
                 </div>
 
