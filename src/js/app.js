@@ -29,30 +29,28 @@ function openTab(evt, cityName) {
     evt.currentTarget.className += " active"
 }
 
-// wait until finished dragscroll-ing to update arrows
-function thenUpdateArrows() {
+function menuScrolled() {
     document.addEventListener('mouseup', updateArrows)
+    document.addEventListener('touchend', updateArrows)
 }
 
 function updateArrows() {
     document.removeEventListener('mouseup', updateArrows)
+    document.removeEventListener('touchend', updateArrows)
     const el = document.getElementById('menutabs')
     const maxScrollLeft = el.scrollWidth - el.clientWidth
     console.log('left scroll max: ' + el.scrollLeft + " of " + maxScrollLeft)
-    if (el.scrollLeft < maxScrollLeft - 1 ) {
-        // Show right arrow
+    // Hide arrows when not scrollable
+    if (el.scrollLeft < maxScrollLeft - 1) {
         document.getElementById('indicator-right').style.display = 'block'
     }
     else {
-        // Hide right arrow
         document.getElementById('indicator-right').style.display = 'none'
     }
     if (el.scrollLeft > 1) {
-        // Show left arrow
         document.getElementById('indicator-left').style.display = 'block'
     }
     else {
-        // Hide left arrow
         document.getElementById('indicator-left').style.display = 'none'
     }
 }
@@ -67,6 +65,7 @@ function arrowLeft() {
     else {
         el.scrollLeft = 0
     }
+    // smooth scroll behavior prevents dragscroll from working correctly
     el.style.scrollBehavior = 'auto'
     // smooth scroll behavior delays leftScroll update
     setTimeout(updateArrows, 500)
@@ -82,10 +81,15 @@ function arrowRight() {
     else {
         el.scrollLeft += el.scrollWidth
     }
+    // smooth scroll behavior prevents dragscroll from working correctly
     el.style.scrollBehavior = 'auto'
     // smooth scroll behavior delays leftScroll update
     setTimeout(updateArrows, 500)
 }
+
+// update arrow indicators after tab interaction is complete
+document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
+document.getElementById('menutabs').addEventListener('mousedown', menuScrolled)
 
 // initialize page
 document.getElementById('defaultOpen').click()
