@@ -9,10 +9,8 @@ window.onclick = function (event) {
     }
 }
 
-function openTab(evt, cityName) {
-    // Declare all variables
-    let tabcontent
-    let tablinks
+function openTab(evt, tabId) {
+    let tabcontent, tablinks
 
     // Get all elements with class="tabcontent" and hide them
     tabcontent = document.getElementsByClassName("tabcontent")
@@ -25,7 +23,7 @@ function openTab(evt, cityName) {
         tablinks[i].className = tablinks[i].className.replace(" active", "")
     }
     // Show the current tab, and add an "active" class to the button that opened the tab 
-    document.getElementById(cityName).style.display = "block"
+    document.getElementById(tabId).style.display = "block"
     evt.currentTarget.className += " active"
 }
 
@@ -87,6 +85,36 @@ function arrowRight() {
     setTimeout(updateArrows, 500)
 }
 
+for (const key in menu) {
+    for (const jey in menu[key]) {
+        console.log(`${jey} in ${key}`)
+        let section = document.createElement('div')
+        section.className = 'menusection'
+        section.innerHTML = `
+        <h3 class="sectiontitle">${jey}</h3>
+        `
+        let sectionBody = document.createElement('div')
+        sectionBody.className = 'sectionbody'
+
+        menu[key][jey].forEach(item => {
+            let sectionItem = document.createElement('div')
+            sectionItem.className = 'sectionitem'
+            sectionItem.innerHTML = `
+            ${item.price ? `<p class="itemprice">${item.price}</p>` : ""}
+            <h5 class="itemname">${item.name}</h5>
+            <p class="itemdesc">${item.description}</p>
+            ${item.vegan ? `<p class="itemveg">*Vegan</p>` : ''}
+            ${item.vegetarian ? `<p class="itemveg">*Vegetarian</p>` : ''}
+            ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
+            ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
+            ${item.image ? `<img class="itemimage" src="./assets/images/${item.image}" alt="${item.name}">` : ''}
+            `
+            sectionBody.appendChild(sectionItem)
+        })
+        section.appendChild(sectionBody)
+        document.getElementById(key).appendChild(section)
+    }
+}
 // update arrow indicators after tab interaction is complete
 document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
 document.getElementById('menutabs').addEventListener('mousedown', menuScrolled)
