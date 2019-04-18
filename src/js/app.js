@@ -23,6 +23,12 @@ function openTab(evt, tabId) {
     // Show the current tab, and add an "active" class to the button that opened the tab 
     document.getElementById(tabId).style.display = "block"
     evt.currentTarget.className += " active"
+    // center active tab
+    const ElemPosition = evt.currentTarget.offsetLeft - 20
+    const targetPosition = (evt.currentTarget.parentElement.clientWidth - evt.currentTarget.clientWidth) / 2
+    document.getElementById('menutabs').style.scrollBehavior = 'smooth'
+    evt.currentTarget.parentElement.scrollLeft = ElemPosition - targetPosition
+    document.getElementById('menutabs').style.scrollBehavior = 'auto'
 }
 
 function menuScrolled() {
