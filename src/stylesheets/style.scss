@@ -147,7 +147,7 @@ main {
     padding: 50px 50px;
 }
 
-#menu {
+.menu {
     background: white;
 }
 
@@ -258,6 +258,11 @@ main {
     font-family: "Roboto Slab", serif;
 }
 
+.sectiondetails {
+    text-align: center;
+    margin-bottom: 1em;
+}
+
 .sectionbody {
     column-count: 3;
     column-gap: 2em;
@@ -310,7 +315,7 @@ iframe {
     height: 450px;
 }
 
-#businessinfo {
+#contact {
     padding: 3em 0 1em 0;
     display: flex;
     flex-wrap: wrap;
