@@ -10,15 +10,13 @@ window.onclick = function (event) {
 }
 
 function openTab(evt, tabId) {
-    let tabcontent, tablinks
-
     // Get all elements with class="tabcontent" and hide them
-    tabcontent = document.getElementsByClassName("tabcontent")
+    let tabcontent = document.getElementsByClassName("tabcontent")
     for (let i = 0; i < tabcontent.length; i++) {
         tabcontent[i].style.display = "none"
     }
     // Get all elements with class="tablinks" and remove the class "active"
-    tablinks = document.getElementsByClassName("tablinks")
+    let tablinks = document.getElementsByClassName("tablinks")
     for (let i = 0; i < tablinks.length; i++) {
         tablinks[i].className = tablinks[i].className.replace(" active", "")
     }
@@ -37,7 +35,6 @@ function updateArrows() {
     document.removeEventListener('touchend', updateArrows)
     const el = document.getElementById('menutabs')
     const maxScrollLeft = el.scrollWidth - el.clientWidth
-    console.log('left scroll max: ' + el.scrollLeft + " of " + maxScrollLeft)
     // Hide arrows when not scrollable
     if (el.scrollLeft < maxScrollLeft - 1) {
         document.getElementById('indicator-right').style.display = 'block'
@@ -85,35 +82,39 @@ function arrowRight() {
     setTimeout(updateArrows, 500)
 }
 
+// Add menu content
 for (const key in menu) {
-    for (const jey in menu[key]) {
-        console.log(`${jey} in ${key}`)
-        let section = document.createElement('div')
-        section.className = 'menusection'
-        section.innerHTML = `
-        <h3 class="sectiontitle">${jey}</h3>
+    menu[key].forEach(section => {
+        let sectionDiv = document.createElement('div')
+        sectionDiv.className = 'menusection'
+        sectionDiv.innerHTML = `
+        <h3 class="sectiontitle">${section["section title"]}</h3>
+        ${section["section details"] ? `<p class="sectiondetails">${section["section details"]}</p>` : ''}
         `
         let sectionBody = document.createElement('div')
         sectionBody.className = 'sectionbody'
 
-        menu[key][jey].forEach(item => {
+        section["section items"].forEach(item => {
             let sectionItem = document.createElement('div')
             sectionItem.className = 'sectionitem'
+            let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
             sectionItem.innerHTML = `
-            ${item.price ? `<p class="itemprice">${item.price}</p>` : ""}
+            ${item.price ? `<p class="itemprice">${`${price}`}</p>` : ""}
             <h5 class="itemname">${item.name}</h5>
             <p class="itemdesc">${item.description}</p>
-            ${item.vegan ? `<p class="itemveg">*Vegan</p>` : ''}
-            ${item.vegetarian ? `<p class="itemveg">*Vegetarian</p>` : ''}
+            ${item["gf option"] ? `<p class="itemdietary">*Gluten-free optional</p>` : ''}
+            ${item.vegan ? `<p class="itemdietary">*Vegan</p>` : ''}
+            ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
             ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
+            ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
             ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
             ${item.image ? `<img class="itemimage" src="./assets/images/${item.image}" alt="${item.name}">` : ''}
             `
             sectionBody.appendChild(sectionItem)
         })
-        section.appendChild(sectionBody)
-        document.getElementById(key).appendChild(section)
-    }
+        sectionDiv.appendChild(sectionBody)
+        document.getElementById(key).appendChild(sectionDiv)
+    })
 }
 // update arrow indicators after tab interaction is complete
 document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
