@@ -196,36 +196,6 @@ main {
     }
 }
 
-@media screen and (pointer: fine) {
-    #menutabs {
-        overflow: hidden;
-    }
-}
-
-@media screen and (max-width: 900px) {
-    .menucontainer {
-        padding: 50px 15px;
-    }
-
-    #menutabs a {
-        //non-wrapping lines taller
-        box-sizing: content-box;
-        line-height: 2em;
-    }
-
-    #menutabs .menutab-wrap {
-        // use non-breaking spaces (&nbsp;) to limit where tabs wrap
-        line-height: 1em;
-        white-space: normal;
-    }
-
-}
-
-@media screen and (max-width: 500px) {
-    #menutabs a {
-        font-size: 16px;
-    }
-}
 
 #indicator-left {
     left: -8px;
@@ -270,7 +240,6 @@ main {
 
 .sectionitem {
     break-inside: avoid;
-    /* display: block; */
     margin-bottom: 1em;
 }
 
@@ -300,6 +269,46 @@ main {
     display: inline-block;
     padding: 0 5px;
     letter-spacing: 1px;
+}
+
+
+@media screen and (pointer: fine) {
+    #menutabs {
+        overflow: hidden;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .menucontainer {
+        padding: 50px 15px;
+    }
+
+    #menutabs a {
+        //non-wrapping lines taller
+        box-sizing: content-box;
+        line-height: 2em;
+    }
+
+    #menutabs .menutab-wrap {
+        // use non-breaking spaces (&nbsp;) to limit where tabs wrap
+        line-height: 1em;
+        white-space: normal;
+    }
+
+    .sectionbody {
+        column-count: 2;
+    }
+
+}
+
+@media screen and (max-width: 500px) {
+    #menutabs a {
+        font-size: 16px;
+    }
+
+    .sectionbody {
+        column-count: auto
+    }
 }
 
 footer {
@@ -363,3 +372,4 @@ iframe {
         height: 5em;
     }
 }
+
