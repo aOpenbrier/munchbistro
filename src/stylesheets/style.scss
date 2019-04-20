@@ -14,7 +14,7 @@ header {
 nav {
     position: fixed;
     top: 0;
-    z-index: 1;
+    z-index: 3;
     width: 100%;
     padding: 1em 6em 1em 5em;
     background: black;
@@ -58,9 +58,7 @@ nav {
 
 @media only screen and (max-width: 900px) {
     nav {
-        position: relative;
-        padding: 0;
-
+        height: 48px;
         ul {
             position: fixed;
             top: 0;
@@ -152,8 +150,11 @@ main {
 }
 
 .menuheader {
-    position: relative;
-    padding: 16px;
+    position: sticky;
+    top: 58px;
+    z-index: 2;
+    padding: 1em 1em .5em;
+    background: white;
 }
 
 #menutabs {
@@ -213,17 +214,21 @@ main {
 .tabcontent {
     color: black;
     display: none;
-    padding: 1em .5em;
+    padding: .5em;
 }
 
 .menusection {
-    padding: 1em;
+    padding: 0 1em;
 }
 
 .sectiontitle {
+    position: sticky;
+    top: 116px;
+    z-index: 1;
+    background: white;
     text-align: center;
     border-bottom: 6px solid black;
-    padding-bottom: .5em;
+    padding: .5em;
     margin-bottom: .5em;
     font-family: "Roboto Slab", serif;
 }
@@ -236,6 +241,7 @@ main {
 .sectionbody {
     column-count: 3;
     column-gap: 2em;
+    padding-bottom: 1em;
 }
 
 .sectionitem {
@@ -283,6 +289,9 @@ main {
         padding: 50px 15px;
     }
 
+    .menuheader {
+        top: 40px;
+    }
     #menutabs a {
         //non-wrapping lines taller
         box-sizing: content-box;
@@ -293,6 +302,10 @@ main {
         // use non-breaking spaces (&nbsp;) to limit where tabs wrap
         line-height: 1em;
         white-space: normal;
+    }
+
+    .sectiontitle {
+        top: 108px;
     }
 
     .sectionbody {
