@@ -23,11 +23,18 @@ function openTab(evt, tabId) {
     // Show the current tab, and add an "active" class to the button that opened the tab 
     document.getElementById(tabId).style.display = "block"
     evt.currentTarget.className += " active"
+    document.getElementById('menutabs').style.scrollBehavior = 'smooth'
     // center active tab
     const ElemPosition = evt.currentTarget.offsetLeft - 20
     const targetPosition = (evt.currentTarget.parentElement.clientWidth - evt.currentTarget.clientWidth) / 2
-    document.getElementById('menutabs').style.scrollBehavior = 'smooth'
     evt.currentTarget.parentElement.scrollLeft = ElemPosition - targetPosition
+    // scroll to top of menu section
+    const menuTop = document.getElementById('ourmenu').offsetTop
+    if (document.documentElement.scrollTop > menuTop || document.body.scrollTop > menuTop) {
+        document.documentElement.scrollTop = menuTop
+        // safari 
+        document.body.scrollTop = menuTop
+    }
     document.getElementById('menutabs').style.scrollBehavior = 'auto'
 }
 
@@ -115,6 +122,7 @@ for (const key in menu) {
             ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
             ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
             ${item.image ? `<img class="itemimage" src="./assets/images/${item.image}" alt="${item.name}">` : ''}
+            <br>
             `
             sectionBody.appendChild(sectionItem)
         })

@@ -577,7 +577,26 @@ const menu = {
         {
             "section title": "WINE LIST",
             "section items": [
-                
+                {
+                    "name": "10 Span Vineyards",
+                    "description": "Pinot Nior",
+                    "options": "Glass $8 Bottle $23",
+                },
+                {
+                    "name": "Charles Smith Wines",
+                    "description": "Eve Chardonnay",
+                    "options": "Glass $11 Bottle $30",
+                },
+                {
+                    "name": "Franciscan Estate",
+                    "description": "Sauvignon Blanc",
+                    "options": "Glass $11 Bottle $30",
+                },
+                {
+                    "name": "Drumheller Wines",
+                    "description": "Cabernet Sauvignon",
+                    "options": "Glass $9 Bottle $26",
+                },
             ],
         },
     ],
