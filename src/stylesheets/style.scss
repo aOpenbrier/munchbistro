@@ -165,7 +165,6 @@ main {
     overflow-x: auto;
     white-space: nowrap;
     text-transform: uppercase;
-
     i {
         color: black;
         position: absolute;
@@ -173,7 +172,10 @@ main {
             -5px 0 2px #fff,
             3px 0px 2px #fff,
             5px 0px 2px #fff;
-    }
+        }
+    i:active {
+        color: $primary;
+        }
 
     a {
         font-size: 18px;
@@ -189,8 +191,14 @@ main {
         margin: 0 4px;
     }
 
-    a.active {
+    a:hover {
         color: $primary;
+        text-shadow: 0 0 1px $primary;
+    }
+
+    a.active, a.active:hover {
+        color: $primary;
+        text-shadow: none;
         border-top: 1px solid $primary;
         border-bottom: 1px solid $primary;
         font-weight: 600;
@@ -241,12 +249,13 @@ main {
 .sectionbody {
     column-count: 3;
     column-gap: 2em;
-    padding-bottom: 1em;
 }
 
 .sectionitem {
+    overflow: hidden;
     break-inside: avoid;
     margin-bottom: 1em;
+    padding-bottom: 1em;
 }
 
 .itemname {
@@ -258,10 +267,25 @@ main {
 .itemprice {
     font-size: 1.25rem;
     float: right;
+    line-height: 1em;
 }
 
 .itemprice::before {
     content: "$";
+}
+
+.itemimgwrapper {
+    position: relative;
+    width: 100%;
+}
+
+.itemimage {
+    width: 100%;
+    padding-bottom: 60%;
+    overflow: hidden;
+    border-radius: 5px;
+    background-size: cover;
+    background-position: center;
 }
 
 .itemfeatured {
@@ -269,13 +293,14 @@ main {
     color: white;
     text-align: right;
     border-radius: 0 5px;
-    /* position: absolute; */
+    position: absolute;
     top: 0;
     right: 0;
     display: inline-block;
     padding: 0 5px;
     letter-spacing: 1px;
 }
+
 
 
 @media screen and (pointer: fine) {
@@ -385,4 +410,3 @@ iframe {
         height: 5em;
     }
 }
-
