@@ -6,53 +6,62 @@ const menu = {
             {
             "price": 13,
             "name": "BBQ Pork Ribs",
-            "description": "Thai style fall-off-the-bone BBQ pork ribs."
+            "description": "Thai style fall-off-the-bone BBQ pork ribs.",
+            "image": "PorkRibs.jpg",
         },
         {
             "price": 20,
             "name": "Munch BBQ Pork Ribs Combo",
-            "description": "Classic shrimp Thai fried rice comes with juicy BBQ pork ribs."
+            "description": "Classic shrimp Thai fried rice comes with juicy BBQ pork ribs.",
+            "image": "PorkRibsCombo.jpg"
         },
         {
             "featured": true,
             "price": 13,
             "name": "Spicy Basil Pork Belly",
-            "description": "Roast pork belly sauteed with sake, chili, onion, green bean, garlic, red bell pepper and basil leaves."
+            "description": "Roast pork belly sauteed with sake, chili, onion, green bean, garlic, red bell pepper and basil leaves.",
+            "image": "SpicyBasilPorkBelly.jpg"
         },
         {
             "featured": true,
             "price": 17,
             "name": "Crispy Garlic Fish Fillet",
-            "description": "Lightly breaded striper fish fillet served with stir fried pineapple, cucumber, tomatoes, celery, carrot and onion in sweet'n sour sauce."
+            "description": "Lightly breaded striper fish fillet served with stir fried pineapple, cucumber, tomatoes, celery, carrot and onion in sweet'n sour sauce.",
+            "image": "GarlicCrispyFishFillet.jpg",
         },
         {
             "featured": true,
             "price": 17,
             "name": "Spiced Striper Fish",
-            "description": "Lightly breaded striper fish fillet topped with stir fried herbs and spice infused sauce. A nice medium spicy kick from fresh green peppers, ginger, white onion, red onion, garlic, black pepper, green onion and cilantro. (Strictly no alteration or substitution for this dish.)"
+            "description": "Lightly breaded striper fish fillet topped with stir fried herbs and spice infused sauce. A nice medium spicy kick from fresh green peppers, ginger, white onion, red onion, garlic, black pepper, green onion and cilantro. (Strictly no alteration or substitution for this dish.)",
+            "image": "SpicedStriperFish.jpg",
         },
         {
             "featured": true,
             "price": 12,
             "name": "Munch Orange Chicken",
-            "description": "Crispy white meat chicken with fresh orange sauce, fresh orange zest topped with sesame seeds and green onion."
+            "description": "Crispy white meat chicken with fresh orange sauce, fresh orange zest topped with sesame seeds and green onion.",
+            "image": "OrangeChicken.jpg",
         },
         {
             "featured": true,
             "price": 16,
             "name": "Soft Shell Crab Curry",
-            "description": "Crispy soft shell crab on top of red curry with red bell pepper, eggplant seasoned with dried chili pepper, coriander root and cumin."
+            "description": "Crispy soft shell crab on top of red curry with red bell pepper, eggplant seasoned with dried chili pepper, coriander root and cumin.",
+            "image": "SoftShellCrabCurry.jpg",
         },
         {
             "featured": true,
             "price": 11,
             "name": "Garlic 'N Pepper Pork Rib",
-            "description": "Small pieces of pork ribs marinated in soy sauce, fresh garlic and pepper. Grilled fresh to order."
+            "description": "Small pieces of pork ribs marinated in soy sauce, fresh garlic and pepper. Grilled fresh to order.",
+            "image": "GarlicPepperPorkRibs.jpg"
         },
         {
             "price": 19,
             "name": "Seafood Combo",
-            "description": "A delightful mix of shrimp, squid, mussel, striper fish and scallop stir fried in a special sauce and Thai sweet-chili paste."
+            "description": "A delightful mix of shrimp, squid, mussel, striper fish and scallop stir fried in a special sauce and Thai sweet-chili paste.",
+            "image": "SeafoodCombo.jpg"
         },
         {
             "price": 13,
@@ -62,7 +71,8 @@ const menu = {
         {
             "price": 12,
             "name": "Cashew Nut",
-            "description": "Chicken white meat sauteed with cashew nuts, carrot, onion, green onion, celery and Thai sweet-chili paste."
+            "description": "Chicken white meat sauteed with cashew nuts, carrot, onion, green onion, celery and Thai sweet-chili paste.",
+            "image": "CashewNut.jpg"
         },
         {
             "price": 12,
@@ -82,18 +92,21 @@ const menu = {
             {
                 "price": 12,
                 "name": "Tiger Prawn Lemongrass",
-                "description": "Steamed tiger prawn seasoned with fresh garlic, lemon grass and Thai chili-lime sauce."
+                "description": "Steamed tiger prawn seasoned with fresh garlic, lemon grass and Thai chili-lime sauce.",
+                "image": "TigerPrawnLemongrass.jpg",
         },
         {
             "featured": true,
             "price": 10,
             "name": "Pork Belly Ball",
-            "description": "Steamed balls of ground pork belly seasoned with chef's special sauce, ginger, soy sauce, Thai spices, sesame seeds, green onion and fried garlic."
+            "description": "Steamed balls of ground pork belly seasoned with chef's special sauce, ginger, soy sauce, Thai spices, sesame seeds, green onion and fried garlic.",
+            "image": "PorkBellyBall.jpg",
         },
         {
             "price": 10,
             "name": "Chicken Vegetable Dumpling",
-            "description": "Steamed dumpling served with chef's special sauce, fresh ginger, soy sauce, Thai spices, sesame seeds and green onion."
+            "description": "Steamed dumpling served with chef's special sauce, fresh ginger, soy sauce, Thai spices, sesame seeds and green onion.",
+            "image": "ChickenVeggiesDumplings.jpg",
         },
         {
             "vegan": true,
@@ -115,18 +128,21 @@ const menu = {
         {
             "price": 9,
             "name": "Crispy Pot Stickers",
-            "description": "Chicken and vegetable crispy potstickers served with a mildly spiced sweet soy sauce (7&nbsp;pieces)."
+            "description": "Chicken and vegetable crispy potstickers served with a mildly spiced sweet soy sauce (7&nbsp;pieces).",
+            "image": "Potstickers.jpg",
         },
         {
             "vegetarian": true,
             "price": 9,
             "name": "Cream Cheese Wonton",
-            "description": "Served with sweet chili sauce (8&nbsp;pieces)."
+            "description": "Served with sweet chili sauce (8&nbsp;pieces).",
+            "image": "Creamcheesewontons.jpg",
         },
         {
             "price": 9,
             "name": "Garlic Chicken Wings",
-            "description": "Crispy chicken wings with garlic and black pepper (7&nbsp;pieces)."
+            "description": "Crispy chicken wings with garlic and black pepper (7&nbsp;pieces).",
+            "image": "Chickenwings.jpg",
         },
         {
             "featured": true,
@@ -148,22 +164,26 @@ const menu = {
         {
             "price": 20,
             "name": "Waterfall Beef",
-            "description": "Fillet mignon cooked medium and seasoned with Thai roasted rice herbs, red and green onions. Topped with crispy shallot and edible flowers. Mild spicy."
+            "description": "Fillet mignon cooked medium and seasoned with Thai roasted rice herbs, red and green onions. Topped with crispy shallot and edible flowers. Mild spicy.",
+            "image": "WaterfallBeef.jpg",
         },
         {
             "price": 11,
             "name": "Moo Yang",
-            "description": "Sweet and savory freshly grilled pork belly. Great with beer, rice or just by itself. Served with traditional North-Eastern Thai style dipping sauce."
+            "description": "Sweet and savory freshly grilled pork belly. Great with beer, rice or just by itself. Served with traditional North-Eastern Thai style dipping sauce.",
+            "image": "MooYang.jpg",
         },
         {
             "price": 14,
             "name": "Seared Yellowfin Tuna",
-            "description": "Black pepper crusted. Topped with traditional Thai chili-lime sauce, crispy shallot and edible flowers."
+            "description": "Black pepper crusted. Topped with traditional Thai chili-lime sauce, crispy shallot and edible flowers.",
+            "image": "SearedYellowfinTuna.jpg",
         },
         {
             "price": 12,
             "name": "Crab Cake",
-            "description": "Baked crab cake with real crab meat on a bed of greens. Topped with Panang Curry sauce. Decorated with edible flowers."
+            "description": "Baked crab cake with real crab meat on a bed of greens. Topped with Panang Curry sauce. Decorated with edible flowers.",
+            "image": "CrabCake.jpg",
         },
         ],
         },
@@ -173,40 +193,47 @@ const menu = {
                 {
                 "price": 14,
                 "name": "Panang Curry Flat Bread Pizza",
-                "description": "With grilled chicken, white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese topped with cilantro."
+                    "description": "With grilled chicken, white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese topped with cilantro.",
+                    "image": "CurryPizza.jpg",
             },
             {
                 "featured": true,
                 "price": 14,
                 "name": "Peanut Sauce Flat Bread Pizza",
-                "description": "Classic Thai sweet and buttery peanut sauce with Italian meat balls topped with white onion, green bell pepper, havarti cheese and crushed peanut."
+                "description": "Classic Thai sweet and buttery peanut sauce with Italian meat balls topped with white onion, green bell pepper, havarti cheese and crushed peanut.",
+                "image": "PeanutSaucePizza.jpg",
             },
             {
                 "price": 15,
                 "name": "Tom Yum Flat Bread Pizza",
-                "description": "With jumbo shrimps seasoned with kaffir lime leaf, galangal, lemongrass, tomato, lime, Thai sweet-chili paste and topped with white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese, cilantro."
+                "description": "With jumbo shrimps seasoned with kaffir lime leaf, galangal, lemongrass, tomato, lime, Thai sweet-chili paste and topped with white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese, cilantro.",
+                "image": "TomYumPizza.jpg",
             },
             {
                 "price": 15,
                 "name": "Tri Color",
-                "description": "Vegetarian portobello mushroom ravioli and spinach ravioli in Thai red curry sauce."
+                "description": "Vegetarian portobello mushroom ravioli and spinach ravioli in Thai red curry sauce.",
+                "image": "TriColor.jpg",
             },
             {
                 "featured": true,
                 "price": 15,
                 "name": "Munch Angus Burger",
-                "description": "Moist and tender Angus burger on a toasted brioche bun with Havarti cheese, tomato, mixed greens seasoned with yellow curry sauce. Served with fries."
+                "description": "Moist and tender Angus burger on a toasted brioche bun with Havarti cheese, tomato, mixed greens seasoned with yellow curry sauce. Served with fries.",
+                "image": "MunchAngusBurger.jpg",
             },
             {
                 "featured": true,
                 "price": 13,
                 "name": "Salmon Poke",
-                "description": "Poke style salmon salad with chef's special sauce and red onion on a bed of mixed greens and topped with edible flowers. Mild spicy."
+                "description": "Poke style salmon salad with chef's special sauce and red onion on a bed of mixed greens and topped with edible flowers. Mild spicy.",
+                "image": "SalmonPoke.jpg",
             },
             {
                 "price": 14,
                 "name": "Pork Rib Sandwich",
-                "description": "Juicy and tender Thai style pork rib meat topped with Thai spiced spicy mayo in toasted brioche bun with havarti cheese, tomato, mixed greens. Served with fries."
+                "description": "Juicy and tender Thai style pork rib meat topped with Thai spiced spicy mayo in toasted brioche bun with havarti cheese, tomato, mixed greens. Served with fries.",
+                "image": "PorkRibSandwich.jpg",
             },
             ],
         },
@@ -216,7 +243,8 @@ const menu = {
                 {
                 "extras": `Seafood (shrimp, squid, fish, mussel, scallop) Hot&nbsp;Pot&nbsp;$18 | Chicken&nbsp;Hot&nbsp;Pot&nbsp;$13 | Chicken&nbsp;Bowl&nbsp;$8 | Shrimp&nbsp;Hot&nbsp;Pot&nbsp;$15 | Shrimp&nbsp;Bowl&nbsp;$10`,
                 "name": "Tom Yum",
-                "description": "Hot & sour soup with lemongrass, lime juice, fresh chili, galangal, tomato and mushroom, topped with green onion and cilantro."
+                "description": "Hot & sour soup with lemongrass, lime juice, fresh chili, galangal, tomato and mushroom, topped with green onion and cilantro.",
+                "image": "TomYumSoup.jpg",
             },
             {
                 "extras": `substitution:<br>
@@ -228,7 +256,8 @@ const menu = {
                     <br>
                     Seafood(shrimp, squid, fish, mussel, scallop) Hot&nbsp;Pot&nbsp;$19 | Chicken&nbsp;Hot&nbsp;Pot&nbsp;$14 | Chicken&nbsp;Bowl&nbsp;$8.50 | Shrimp&nbsp;Hot&nbsp;Pot&nbsp;$16 | Shrimp&nbsp;Bowl&nbsp;$10.50 `,
                 "name": "Tom Kha",
-                "description": "Hot & sour soup with fresh creamy coconut cream, lemongrass, lime juice, fresh chili, galangal, tomato and mushroom, topped with green onion and cilantro."
+                "description": "Hot & sour soup with fresh creamy coconut cream, lemongrass, lime juice, fresh chili, galangal, tomato and mushroom, topped with green onion and cilantro.",
+                "image": "TomKha.jpg",
             },
             {
                 "price": 13,
@@ -243,18 +272,19 @@ const menu = {
                 {
                 "price": 13,
                 "name": "Chicken Salad",
-                "description": "Grilled chicken white meat with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing."
+                "description": "Grilled chicken white meat with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing.",
             },
             {
                 "price": 15,
                 "name": "Beef Salad",
-                "description": "Grilled beef with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing."
+                "description": "Grilled beef with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing.",
+                "image": "BeefSalad.jpg",
             },
             {
                 "featured": true,
                 "price": 18,
                 "name": "Seafood Salad",
-                "description": "Steamed shrimp, squid, striper fish, mussel, scallop with fresh mango, red onion, green onion, cilantro, cucumber, tomato mixed in chili lime dressing."
+                "description": "Steamed shrimp, squid, striper fish, mussel, scallop with fresh mango, red onion, green onion, cilantro, cucumber, tomato mixed in chili lime dressing.",
             },
             ],
         },
@@ -264,13 +294,16 @@ const menu = {
                 {
                 "price": 11,
                 "name": "Yellow Curry",
-                "description": "Cooked with creamy coconut milk, carrot and potato seasoned with cumin, coriander, turmeric, garlic and lemongrass. Gluten-free optional."
+                "gf option": true,
+                "description": "Cooked with creamy coconut milk, carrot and potato seasoned with cumin, coriander, turmeric, garlic and lemongrass.",
+                "image": "YellowCurry.jpg",
             },
             {
                 "featured": true,
                 "price": 11,
                 "name": "Green Curry",
-                "description": "Cooked with creamy coconut milk, green bean, basil, Thai eggplant seasoned with green chilli, shallots, garlic, galangal. Gluten-free optional."
+                "gf option": true,
+                "description": "Cooked with creamy coconut milk, green bean, basil, Thai eggplant seasoned with green chili, shallots, garlic, galangal."
             },
             {
                 "price": 11,
@@ -288,13 +321,15 @@ const menu = {
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3`,
                 "price": 11,
                 "name": "Thai Pasta",
-                "description": "Stir fried yakisoba noodles, fresh chili, onion, green onion, green bell pepper, broccoli, tomato and basil."
+                "description": "Stir fried yakisoba noodles, fresh chili, onion, green onion, green bell pepper, broccoli, tomato and basil.",
+                "image" : "ThaiPasta.jpg",
             },
             {
                 "featured": true,
                 "price": 21,
                 "name": "Pad Thai Grilled Tiger Prawns",
-                "description": "Stir fried Thai rice noodles with red onion, egg, green onion, bean sprouts and crushed peanuts."
+                "description": "Stir fried Thai rice noodles with red onion, egg, green onion, bean sprouts and crushed peanuts.",
+                "image": "PadThaiTigerPrawn.jpg",
             },
             {
                 "extras": `substitution:<br>
@@ -302,7 +337,7 @@ const menu = {
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
                 "price": 11,
                 "name": "Pad Thai",
-                "description": "Stir fried Thai rice noodles, red onion, egg, green onion, bean sprouts and crushed peanuts."
+                "description": "Stir fried Thai rice noodles, red onion, egg, green onion, bean sprouts and crushed peanuts.",
             },
             {
                 "extras": `substitution:<br>
@@ -310,7 +345,9 @@ const menu = {
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
                 "price": 11,
                 "name": "Pad See Ew",
-                "description": "Stir fried flat rice noodles, egg and broccoli seasoned with sweet black soy sauce."
+                "description": "Stir fried flat rice noodles, egg and broccoli seasoned with sweet black soy sauce.",
+                "image": "PadSeeEw.jpg",
+
             },
             {
                 "featured": true,
@@ -319,7 +356,7 @@ const menu = {
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
                 "price": 11,
                 "name": "Pad Kee Mao",
-                "description": "Stir fried flat rice noodles, Thai chili, garlic, red bell pepper, tomato, onion, green onion, broccoli and basil."
+                "description": "Stir fried flat rice noodles, Thai chili, garlic, red bell pepper, tomato, onion, green onion, broccoli and basil.",
             },
             {
                 "extras": `substitution:<br>
@@ -337,13 +374,15 @@ const menu = {
                 {
                 "price": 16,
                 "name": "Crab Fried Rice",
-                "description": "Real snow crab meat stir fried with Thai jasmine rice, egg, tomato, green onion and white onion."
+                "description": "Real snow crab meat stir fried with Thai jasmine rice, egg, tomato, green onion and white onion.",
+                "image": "CrabFriedRice.jpg",
             },
             {
                 "featured": true,
                 "price": 15,
                 "name": "Pineapple Fried Rice",
-                "description": "Exotic curry fried rice with shrimp, chicken, pork, egg, onion, green onion, tomato, cashew nuts and pineapple chunks."
+                "description": "Exotic curry fried rice with shrimp, chicken, pork, egg, onion, green onion, tomato, cashew nuts and pineapple chunks.",
+                "image": "PineappleFriedRice.jpg",
             },
             {
                 "extras": `substitution:<br>
@@ -449,6 +488,7 @@ const menu = {
                     "name": "Cream Cheese Wonton",
                     "description": "Served with sweet chili sauce. (8 pieces) ",
                     "vegetarian": true,
+                    "image": "Creamcheesewontons.jpg",
                 },
                 {
                     "price": 9,
@@ -533,6 +573,7 @@ const menu = {
                     "description": "Creamy coconut milk, carrot and potato seasoned with cumin, coriander, turmeric, garlic and lemongrass.",
                     "gf option": true,
                     "options": "(Options : Fried Tofu, Soft Tofu or Mixed Veggies)",
+                    "image": "YellowCurry.jpg",
                 },
                 {
                     "price": 13.50,
@@ -553,6 +594,7 @@ const menu = {
                     "name": "Tri Color",
                     "description": "Vegetarian portobello mushroom ravioli and spinach ravioli in Thai red curry sauce.",
                     "featured": true,
+                    "image": "TriColor.jpg",
                 },
             ],
         },
@@ -581,21 +623,25 @@ const menu = {
                     "name": "10 Span Vineyards",
                     "description": "Pinot Nior",
                     "options": "Glass $8 Bottle $23",
+                    "image": "10SpanPinot.jpg"
                 },
                 {
                     "name": "Charles Smith Wines",
                     "description": "Eve Chardonnay",
                     "options": "Glass $11 Bottle $30",
+                    "image": "CharlesSmithChardonnay.jpg",
                 },
                 {
                     "name": "Franciscan Estate",
                     "description": "Sauvignon Blanc",
                     "options": "Glass $11 Bottle $30",
+                    "image": "FranciscanSauvignon.jpg"
                 },
                 {
                     "name": "Drumheller Wines",
                     "description": "Cabernet Sauvignon",
                     "options": "Glass $9 Bottle $26",
+                    "image": "DrumhellerCabernet.jpg"
                 },
             ],
         },
@@ -605,7 +651,7 @@ const menu = {
             "section title": "CRAFT BEER",
             "section items": [
             ],
-            "section details": "Try one of our 27 self - serve craft beer taps.Our rotating selection will feature micro- brews from local brewers as well as from across the state.Enjoy $5 pints for Happy Hour by asking one of our servers to pour for you.Please drink responsibly.",
+            "section details": "Try one of our 27 self-serve craft beer taps. Our rotating selection will feature micro-brews from local brewers as well as from across the state. Enjoy $5 pints for Happy Hour by asking one of our servers to pour for you. Please drink responsibly.",
         }
     ]
 }
