@@ -11,18 +11,18 @@ window.onclick = function (event) {
 
 function openTab(evt, tabId) {
     // Get all elements with class="tabcontent" and hide them
-    let tabcontent = document.getElementsByClassName("tabcontent")
+    let tabcontent = document.getElementsByClassName('tabcontent')
     for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none"
+        tabcontent[i].style.display = 'none'
     }
     // Get all elements with class="tablinks" and remove the class "active"
-    let tablinks = document.getElementsByClassName("tablinks")
+    let tablinks = document.getElementsByClassName('tablinks')
     for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "")
+        tablinks[i].className = tablinks[i].className.replace(' active', '')
     }
     // Show the current tab, and add an "active" class to the button that opened the tab 
-    document.getElementById(tabId).style.display = "block"
-    evt.currentTarget.className += " active"
+    document.getElementById(tabId).style.display = 'block'
+    evt.currentTarget.className += ' active'
     document.getElementById('menutabs').style.scrollBehavior = 'smooth'
     // center active tab
     const ElemPosition = evt.currentTarget.offsetLeft - 20
@@ -120,8 +120,12 @@ for (const key in menu) {
             ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
             ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
             ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
+            <div class="itemimgwrapper">
+            ${item.image ? `
+                <div class="itemimage" style="background-image:url(./assets/images/${item.image})"></div>
+            ` : ''}
             ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
-            ${item.image ? `<img class="itemimage" src="./assets/images/${item.image}" alt="${item.name}">` : ''}
+            </div>
             `
             sectionBody.appendChild(sectionItem)
         })
