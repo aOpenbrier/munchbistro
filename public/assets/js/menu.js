@@ -10,6 +10,7 @@ const menu = {
             "image": "PorkRibs.jpg",
         },
         {
+            "featured": true,
             "price": 20,
             "name": "Munch BBQ Pork Ribs Combo",
             "description": "Classic shrimp Thai fried rice comes with juicy BBQ pork ribs.",
@@ -51,7 +52,6 @@ const menu = {
             "image": "SoftShellCrabCurry.jpg",
         },
         {
-            "featured": true,
             "price": 11,
             "name": "Garlic 'N Pepper Pork Rib",
             "description": "Small pieces of pork ribs marinated in soy sauce, fresh garlic and pepper. Grilled fresh to order.",
@@ -89,11 +89,12 @@ const menu = {
         {
             "section title": "TAPAS STYLE MUNCHIES",
             "section items": [
-            {
-                "price": 12,
-                "name": "Tiger Prawn Lemongrass",
-                "description": "Steamed tiger prawn seasoned with fresh garlic, lemon grass and Thai chili-lime sauce.",
-                "image": "TigerPrawnLemongrass.jpg",
+        {
+            "featured": true,
+            "price": 12,
+            "name": "Tiger Prawn Lemongrass",
+            "description": "Steamed tiger prawn seasoned with fresh garlic, lemon grass and Thai chili-lime sauce.",
+            "image": "TigerPrawnLemongrass.jpg",
         },
         {
             "featured": true,
@@ -103,6 +104,7 @@ const menu = {
             "image": "PorkBellyBall.jpg",
         },
         {
+            "featured": true,
             "price": 10,
             "name": "Chicken Vegetable Dumpling",
             "description": "Steamed dumpling served with chef's special sauce, fresh ginger, soy sauce, Thai spices, sesame seeds and green onion.",
@@ -110,7 +112,6 @@ const menu = {
         },
         {
             "vegan": true,
-            "featured": true,
             "price": 9,
             "name": "Brussels Sprouts",
             "description": "Crispy and fresh seasoned with mildly spiced Thai sweet soy sauce. "
@@ -123,7 +124,7 @@ const menu = {
         {
             "price": 10,
             "name": "Calamari",
-            "description": "Panko crusted calamari served with sweet-chili sauce."
+            "description": "Panko crusted calamari served with sweet-chili sauce.",
         },
         {
             "price": 9,
@@ -139,16 +140,16 @@ const menu = {
             "image": "Creamcheesewontons.jpg",
         },
         {
+            "featured": true,
             "price": 9,
             "name": "Garlic Chicken Wings",
             "description": "Crispy chicken wings with garlic and black pepper (7&nbsp;pieces).",
             "image": "Chickenwings.jpg",
         },
         {
-            "featured": true,
             "price": 9,
             "name": "Party Wings",
-            "description": "Choose one flavor per order: Honey Garlic I Orange Sauce I Sriracha I Buffalo (7 pieces)."
+            "description": "Choose one flavor per order: Honey Garlic I Orange Sauce I Sriracha I Buffalo (7 pieces).",
         },
         {
             "vegan": true,
@@ -191,13 +192,13 @@ const menu = {
             "section title": "THAI WITH A TWIST",
             "section items": [
                 {
+                "featured": true,
                 "price": 14,
                 "name": "Panang Curry Flat Bread Pizza",
-                    "description": "With grilled chicken, white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese topped with cilantro.",
-                    "image": "CurryPizza.jpg",
+                "description": "With grilled chicken, white onion, green bell pepper, jalapeno, havarti cheese, parmesan cheese topped with cilantro.",
+                "image": "CurryPizza.jpg",
             },
             {
-                "featured": true,
                 "price": 14,
                 "name": "Peanut Sauce Flat Bread Pizza",
                 "description": "Classic Thai sweet and buttery peanut sauce with Italian meat balls topped with white onion, green bell pepper, havarti cheese and crushed peanut.",
@@ -210,6 +211,7 @@ const menu = {
                 "image": "TomYumPizza.jpg",
             },
             {
+                "featured": true,
                 "price": 15,
                 "name": "Tri Color",
                 "description": "Vegetarian portobello mushroom ravioli and spinach ravioli in Thai red curry sauce.",
@@ -223,7 +225,6 @@ const menu = {
                 "image": "MunchAngusBurger.jpg",
             },
             {
-                "featured": true,
                 "price": 13,
                 "name": "Salmon Poke",
                 "description": "Poke style salmon salad with chef's special sauce and red onion on a bed of mixed greens and topped with edible flowers. Mild spicy.",
@@ -275,13 +276,13 @@ const menu = {
                 "description": "Grilled chicken white meat with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing.",
             },
             {
+                "featured": true,
                 "price": 15,
                 "name": "Beef Salad",
                 "description": "Grilled beef with fresh mango, red onion, green onion, cilantro, cucumber, tomato, cashew nut mixed in chili lime dressing.",
                 "image": "BeefSalad.jpg",
             },
             {
-                "featured": true,
                 "price": 18,
                 "name": "Seafood Salad",
                 "description": "Steamed shrimp, squid, striper fish, mussel, scallop with fresh mango, red onion, green onion, cilantro, cucumber, tomato mixed in chili lime dressing.",
@@ -292,6 +293,7 @@ const menu = {
             "section title": "CURRY",    
             "section items": [
                 {
+                "featured": true,
                 "price": 11,
                 "name": "Yellow Curry",
                 "gf option": true,
@@ -299,7 +301,6 @@ const menu = {
                 "image": "YellowCurry.jpg",
             },
             {
-                "featured": true,
                 "price": 11,
                 "name": "Green Curry",
                 "gf option": true,
@@ -316,6 +317,7 @@ const menu = {
             "section title": "FRIED NOODLES",
             "section items": [
                 {
+                "featured": true,
                 "extras": `substitution: <br>
                     pork, fried tofu, soft tofu +&nbsp;$0.50 <br>
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3`,
@@ -325,7 +327,6 @@ const menu = {
                 "image" : "ThaiPasta.jpg",
             },
             {
-                "featured": true,
                 "price": 21,
                 "name": "Pad Thai Grilled Tiger Prawns",
                 "description": "Stir fried Thai rice noodles with red onion, egg, green onion, bean sprouts and crushed peanuts.",
@@ -340,6 +341,7 @@ const menu = {
                 "description": "Stir fried Thai rice noodles, red onion, egg, green onion, bean sprouts and crushed peanuts.",
             },
             {
+                "featured": true,
                 "extras": `substitution:<br>
                     pork, fried tofu, soft tofu +&nbsp;$0.50 <br>
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
@@ -350,7 +352,6 @@ const menu = {
 
             },
             {
-                "featured": true,
                 "extras": `substitution:<br>
                     pork, fried tofu, soft tofu +&nbsp;$0.50 <br>
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
@@ -372,6 +373,7 @@ const menu = {
             "section title": "FRIED RICE",
             "section items": [
                 {
+                "featured": true,
                 "price": 16,
                 "name": "Crab Fried Rice",
                 "description": "Real snow crab meat stir fried with Thai jasmine rice, egg, tomato, green onion and white onion.",
@@ -388,10 +390,9 @@ const menu = {
                 "extras": `substitution:<br>
                     pork, fried tofu, soft tofu +&nbsp;$0.50<br>
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
-                "featured": true,
                 "price": 11,
                 "name": "Spicy Fried Rice",
-                "description": "Stir fried jasmine rice, fresh chili, white onion, green onion, green bell pepper, broccoli, tomato and basil."
+                "description": "Stir fried jasmine rice, fresh chili, white onion, green onion, green bell pepper, broccoli, tomato and basil.",
             },
             {
 
@@ -401,7 +402,8 @@ const menu = {
                     chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 `,
                 "price": 11,
                 "name": "Thai Fried Rice",
-                "description": "Authentic stir fried Thai jasmine rice with green onion, white onion, tomato and egg."
+                "description": "Authentic stir fried Thai jasmine rice with green onion, white onion, tomato and egg.",
+                "image": "ThaiFriedRice.jpg",
             },
             ],
         },
@@ -411,17 +413,20 @@ const menu = {
                 {
                     "price": 10,
                     "name": "Banana Wontons",
-                    "description": "Sweet, fresh, ripe banana wrapped with crispy wonton sprinkled with powdered sugar. Served with housemade strawberry and banana cream cheese dipping sauce."
+                    "description": "Sweet, fresh, ripe banana wrapped with crispy wonton sprinkled with powdered sugar. Served with housemade strawberry and banana cream cheese dipping sauce.",
+                    "image": "BananaWontons.jpg",
                 },
                 {
                     "price": 10,
                     "name": "Brick Toast",
-                    "description": "Crispy toasted butter brick toast drizzled with housemade Thai tea cream cheese sauce and sprinkles with powdered sugar."
+                    "description": "Crispy toasted butter brick toast drizzled with housemade Thai tea cream cheese sauce and sprinkles with powdered sugar.",
+                    "image": "BrickToast.jpg",
                 },
                 {
                     "price": 10,
                     "name": "Mango Sticky Rice",
-                    "description": "A classic Thai dessert with a yummy twist. Sweet coconut sticky rice with a mix of mango purée and cubes of fresh yellow mango. Extra coconut cream served on the side."
+                    "description": "A classic Thai dessert with a yummy twist. Sweet coconut sticky rice with a mix of mango purée and cubes of fresh yellow mango. Extra coconut cream served on the side.",
+                    "image": "MangoStickyRice.jpg",
                 },
             ],
         },
