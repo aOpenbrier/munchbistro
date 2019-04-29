@@ -80,10 +80,6 @@ nav {
             bottom: 32px;
             right: 32px;
 
-            .material-icons {
-                vertical-align: middle;
-            }
-
             a {
                 padding: 0px;
                 border-radius: 50%;
@@ -91,7 +87,7 @@ nav {
                 height: 64px;
                 width: 64px;
                 line-height: 64px;
-                font-size: 12px;
+                font-size: 16px;
                 text-align: center;
             }
         }
@@ -288,6 +284,12 @@ main {
     background-position: center;
 }
 
+.beerimage {
+    float: left;
+    margin-right: 1em;
+    max-width: 100px;
+}
+
 .itemfeatured {
     background: rgba(196, 0, 27, .7);
     color: white;
@@ -342,6 +344,7 @@ main {
 @media screen and (max-width: 500px) {
     #menutabs a {
         font-size: 16px;
+        letter-spacing: 1px;
     }
 
     .sectionbody {
