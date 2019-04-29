@@ -11,18 +11,18 @@ window.onclick = function (event) {
 
 function openTab(evt, tabId) {
     // Get all elements with class="tabcontent" and hide them
-    let tabcontent = document.getElementsByClassName("tabcontent")
+    let tabcontent = document.getElementsByClassName('tabcontent')
     for (let i = 0; i < tabcontent.length; i++) {
-        tabcontent[i].style.display = "none"
+        tabcontent[i].style.display = 'none'
     }
     // Get all elements with class="tablinks" and remove the class "active"
-    let tablinks = document.getElementsByClassName("tablinks")
+    let tablinks = document.getElementsByClassName('tablinks')
     for (let i = 0; i < tablinks.length; i++) {
-        tablinks[i].className = tablinks[i].className.replace(" active", "")
+        tablinks[i].className = tablinks[i].className.replace(' active', '')
     }
     // Show the current tab, and add an "active" class to the button that opened the tab 
-    document.getElementById(tabId).style.display = "block"
-    evt.currentTarget.className += " active"
+    document.getElementById(tabId).style.display = 'block'
+    evt.currentTarget.className += ' active'
     document.getElementById('menutabs').style.scrollBehavior = 'smooth'
     // center active tab
     const ElemPosition = evt.currentTarget.offsetLeft - 20
@@ -36,6 +36,7 @@ function openTab(evt, tabId) {
         document.body.scrollTop = menuTop
     }
     document.getElementById('menutabs').style.scrollBehavior = 'auto'
+    setTimeout(updateArrows, 500)
 }
 
 function menuScrolled() {
@@ -112,17 +113,18 @@ for (const key in menu) {
             sectionItem.className = 'sectionitem' 
             let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
             sectionItem.innerHTML = `
-            ${item.price ? `<p class="itemprice">${ `${price}`}</p>` : ""}
-            <h5 class="itemname">${item.name}</h5>
-            <p class="itemdesc">${item.description}</p>
-            ${item["gf option"] ? `<p class="itemdietary">*Gluten-free optional</p>` : ''}
-            ${item.vegan ? `<p class="itemdietary">*Vegan</p>` : ''}
-            ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
-            ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
-            ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
-            ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
-            ${item.image ? `<img class="itemimage" src="./assets/images/${item.image}" alt="${item.name}">` : ''}
-            <br>
+${item.price ? `<p class="itemprice">${ `${price}`}</p>` : ''}
+<h5 class="itemname">${item.name}</h5>
+<p class="itemdesc">${item.description}</p>
+${item["gf option"] ? `<p class="itemdietary">*Gluten-free optional</p>` : ''}
+${item.vegan ? `<p class="itemdietary">*Vegan</p>` : ''}
+${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
+${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
+${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
+<div class="itemimgwrapper">
+    ${item.image ? `<div class="itemimage" style="background-image:url(./assets/images/${item.image})"></div>` : ''}
+    ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
+</div>
             `
             sectionBody.appendChild(sectionItem)
         })
@@ -130,6 +132,47 @@ for (const key in menu) {
         document.getElementById(key).appendChild(sectionDiv)
     })
 }
+
+
+// Get Untappd beer menu
+fetch('https://business.untappd.com/api/v1/menus/62808?full=true', {
+    headers: {"Authorization": "Basic YW9wZW5icmllckBnbWFpbC5jb206RVVYcWFnYnVMN0pEaS1MS3FqUkg="}
+}).then(r => r.json())
+.then(r => {
+    console.log(r)
+    let beerMenu = document.createElement('div')
+    r.menu.sections.forEach(section =>{
+        let beerSection = document.createElement('div')
+        beerSection.className = 'menusection'
+        beerSection.innerHTML = `<h3 class="sectiontitle">${section.name}</h3>`
+        let sectionBody = document.createElement('div')
+        sectionBody.className = 'sectionbody'
+        section.items.forEach(item => {
+            let sectionItem = document.createElement('div')
+            sectionItem.className = 'sectionitem'
+
+            let containerIndex = 0
+            // check if beer is on tap wall, would include 1 oz pricing
+            item.containers.forEach((container, i) => {
+                if (container.container_size.ounces == 1.0) {
+                    containerIndex = i
+                }
+            })
+            sectionItem.innerHTML = `
+            ${item.label_image ? `<a href="https://untappd.com/b/${item.untappd_beer_sluguntappd_beer_slug}/${item.untappd_id}"><img class="beerimage" src="${item.label_image}"></a>` : ''}
+<a href="https://untappd.com/b/${item.untappd_beer_sluguntappd_beer_slug}/${item.untappd_id}"><h5 class="itemname">${item.name || ''}</h5></a>
+<p class="itemdesc">${item.brewery || ''}, ${item.brewery_location || ''}</p>
+<p class="beerprice">${parseInt(item.containers[containerIndex].container_size.ounces) == 1 ? 'Oz. ' : item.containers[containerIndex].container_size.name || ''} $${item.containers[containerIndex].price || ''}</p>
+`
+            sectionBody.appendChild(sectionItem)
+        })
+        beerSection.appendChild(sectionBody)
+        beerMenu.appendChild(beerSection)
+    })
+
+    document.getElementById('menubeer').appendChild(beerMenu)
+}).catch(e => console.error(e))
+
 // update arrow indicators after tab interaction is complete
 document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
 document.getElementById('menutabs').addEventListener('mousedown', menuScrolled)
