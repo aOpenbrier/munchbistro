@@ -159,10 +159,10 @@ fetch('https://business.untappd.com/api/v1/menus/62808?full=true', {
                     }
                 })
                 sectionItem.innerHTML = `
-            ${item.label_image ? `<img class="beerimage" src="${item.label_image}">` : ''}
-<h5 class="itemname">${item.name || ''}</h5>
+            ${item.label_image ? `<a href="https://untappd.com/b/${item.untappd_beer_sluguntappd_beer_slug}/${item.untappd_id}"><img class="beerimage" src="${item.label_image}"></a>` : ''}
+<a href="https://untappd.com/b/${item.untappd_beer_sluguntappd_beer_slug}/${item.untappd_id}"><h5 class="itemname">${item.name || ''}</h5></a>
 <p class="itemdesc">${item.brewery || ''}, ${item.brewery_location || ''}</p>
-<p class="beerprice">${parseInt(item.containers[containerIndex].container_size.ounces) == 1 ? 'Oz. ' : item.containers[containerIndex].container_size.name} $${item.containers[containerIndex].price || ''}</p>
+<p class="beerprice">${parseInt(item.containers[containerIndex].container_size.ounces) == 1 ? 'Oz. ' : item.containers[containerIndex].container_size.name || ''} $${item.containers[containerIndex].price || ''}</p>
 `
                 sectionBody.appendChild(sectionItem)
             })
@@ -170,7 +170,7 @@ fetch('https://business.untappd.com/api/v1/menus/62808?full=true', {
             beerMenu.appendChild(beerSection)
         })
 
-        document.getElementById('menubeer').innerHTML = beerMenu.innerHTML
+        document.getElementById('menubeer').appendChild(beerMenu)
     }).catch(e => console.error(e))
 
 // update arrow indicators after tab interaction is complete
