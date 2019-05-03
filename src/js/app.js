@@ -50,13 +50,13 @@ function updateArrows() {
     const el = document.getElementById('menutabs')
     const maxScrollLeft = el.scrollWidth - el.clientWidth
     // Hide arrows when not scrollable
-    if (el.scrollLeft < maxScrollLeft - 1) {
+    if (el.scrollLeft < maxScrollLeft - 8) {
         document.getElementById('indicator-right').style.display = 'block'
     }
     else {
         document.getElementById('indicator-right').style.display = 'none'
     }
-    if (el.scrollLeft > 1) {
+    if (el.scrollLeft > 8) {
         document.getElementById('indicator-left').style.display = 'block'
     }
     else {
@@ -98,7 +98,7 @@ function arrowRight() {
 
 // Add menu content
 for (const key in menu) {
-    menu[key].forEach(section => {
+    menu[key].forEach((section, sectionIndex) => {
         let sectionDiv = document.createElement('div')
         sectionDiv.className = 'menusection'
         sectionDiv.innerHTML = `
@@ -108,7 +108,7 @@ for (const key in menu) {
         let sectionBody = document.createElement('div')
         sectionBody.className = 'sectionbody'
 
-        section["section items"].forEach(item => {
+        section["section items"].forEach((item, itemIndex) => {
             let sectionItem = document.createElement('div')
             sectionItem.className = 'sectionitem'
             let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
@@ -122,17 +122,19 @@ ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
 ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
 ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
 <div class="itemimgwrapper">
-    ${item.image ? `<div class="itemimage" style="background-image:url(./assets/images/${item.image})"></div>` : ''}
+    ${item.image ? `
+    <div class="itemimage" style="background-image:url(./assets/images/${item.image})">
+        <iframe src="https://www.facebook.com/plugins/share_button.php?href=https%3A%2F%2Fwww.munchbistro.com%2Fmenu%2F${item.image.split('.')[0]}.html&layout=button&size=small&width=59&height=20&appId" width="59" height="20" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+    </div>` : ''}
     ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
 </div>
-            `
+`
             sectionBody.appendChild(sectionItem)
         })
         sectionDiv.appendChild(sectionBody)
         document.getElementById(key).appendChild(sectionDiv)
     })
 }
-
 
 // Get Untappd beer menu
 fetch('https://business.untappd.com/api/v1/menus/62808?full=true', {
