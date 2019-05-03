@@ -121,7 +121,6 @@ nav {
 }
 
 main {
-
     .description {
         font-size: 18px;
         line-height: 25px;
@@ -252,6 +251,10 @@ main {
     column-gap: 2em;
 }
 
+#menubeer .sectionbody {
+    column-count: 2;
+}
+
 .sectionitem {
     overflow: hidden;
     break-inside: avoid;
@@ -291,6 +294,14 @@ main {
     border-radius: 5px;
     background-size: cover;
     background-position: center;
+    iframe {
+        position: absolute;
+    }
+}
+
+.sharewrapper {
+    position: absolute;
+    top: 0;
 }
 
 .beerimage {
@@ -312,6 +323,27 @@ main {
     letter-spacing: 1px;
 }
 
+.itempage {
+    padding: 1em;
+    color: black
+}
+
+.itempagelogo {
+    position: relative;
+    top: -8px;
+    height: 100px;
+    float: right;
+}
+.backbutton {
+    display: inline-block;
+    margin: 1em 0;
+    color: white;
+    text-decoration: none;
+    font-size: 24px;
+    i {
+        vertical-align: bottom;
+    }
+}
 
 
 @media screen and (pointer: fine) {
@@ -346,6 +378,9 @@ main {
 
     .sectionbody {
         column-count: 2;
+    }
+    #menubeer .sectionbody {
+        column-count: 1;
     }
 
 }
@@ -415,10 +450,4 @@ iframe {
 .location {
     background: #191919;
     padding: 15px;
-    display: flex;
-    justify-content: space-around;
-
-    img {
-        height: 5em;
-    }
 }
