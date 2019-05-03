@@ -660,3 +660,7 @@ const menu = {
         }
     ]
 }
+
+if (typeof module !== 'undefined') {
+    module.exports = menu
+}
