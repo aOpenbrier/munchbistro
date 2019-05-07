@@ -449,5 +449,21 @@ iframe {
 
 .location {
     background: #191919;
-    padding: 15px;
+    padding: 1em;
+    h6 {
+        margin-bottom: .5em;
+        text-align: center;
+    }
+    a {
+        color: white;
+    }
 }
+    .restaurants {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        div {
+            margin: 1em;
+            white-space: nowrap;
+        }
+    }
