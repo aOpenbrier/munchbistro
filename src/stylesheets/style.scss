@@ -105,8 +105,6 @@ nav {
     .hamburger i.material-icons {
         padding: 12px;
         font-size: 24px;
-        text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7),
-            -1px -1px 0px rgba(0, 0, 0, .3);
     }
 
     .hidemobile {
@@ -223,7 +221,7 @@ main {
 }
 
 .menusection {
-    padding: 0 1em;
+    padding: 0 3em;
 }
 
 .sectiontitle {
@@ -325,9 +323,15 @@ main {
     letter-spacing: 1px;
 }
 
+.menudisclaimer {
+    padding: 2em 0;
+    text-align: center;
+    font-style: italic;
+}
+
 .itempage {
     padding: 1em;
-    color: black
+    color: black;
 }
 
 .itempagelogo {
@@ -374,6 +378,10 @@ main {
         white-space: normal;
     }
 
+    .menusection {
+        padding: 0 2em;
+    }
+
     .sectiontitle {
         top: 108px;
     }
@@ -391,6 +399,10 @@ main {
     #menutabs a {
         font-size: 16px;
         letter-spacing: 1px;
+    }
+
+    .menusection {
+        padding: 0 1em;
     }
 
     .sectionbody {
