@@ -85,23 +85,27 @@ function arrowRight() {
     setTimeout(updateArrows, 500)
 }
 
-// Add menu content
-for (const key in menu) {
-    menu[key].forEach((section, sectionIndex) => {
-        let sectionDiv = document.createElement('div')
-        sectionDiv.className = 'menusection'
-        sectionDiv.innerHTML = `
+fetch('./assets/js/menu.json')
+    .then(r => r.json())
+    .then(menu => {
+        // Add menu content
+        menu.forEach(tab => {
+            tab.sections.forEach((section, sectionIndex) => {
+                let sectionDiv = document.createElement('div')
+                sectionDiv.className = 'menusection'
+                sectionDiv.innerHTML = `
         <h3 class="sectiontitle">${section["section title"]}</h3>
         ${section["section details"] ? `<p class="sectiondetails">${section["section details"]}</p>` : ''}
         `
-        let sectionBody = document.createElement('div')
-        sectionBody.className = 'sectionbody'
+                if (section["section items"]) {
+                    let sectionBody = document.createElement('div')
+                    sectionBody.className = 'sectionbody'
 
-        section["section items"].forEach((item, itemIndex) => {
-            let sectionItem = document.createElement('div')
-            sectionItem.className = 'sectionitem'
-            let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
-            sectionItem.innerHTML = `
+                    section["section items"].forEach((item, itemIndex) => {
+                        let sectionItem = document.createElement('div')
+                        sectionItem.className = 'sectionitem'
+                        let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
+                        sectionItem.innerHTML = `
 ${item.price ? `<p class="itemprice">${`${price}`}</p>` : ''}
 ${item.name ? `<h5 class="itemname">${item.name}</h5>` : ''}
 ${item.description ? `<p class="itemdesc">${item.description}</p>` : ''}
@@ -110,7 +114,6 @@ ${item.vegan ? `<p class="itemdietary">*Vegan</p>` : ''}
 ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
 ${item.extras ? `<p class="itemextras">${item.extras}</p>` : ''}
 ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
-${item.list ? `<p class="itemlist">${item.list}</p>` : ''}
 <div class="itemimgwrapper">
     ${item.image ? `
     <div class="itemimage" style="background-image:url(./assets/images/${item.image})">
@@ -119,12 +122,30 @@ ${item.list ? `<p class="itemlist">${item.list}</p>` : ''}
     ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
 </div>
 `
-            sectionBody.appendChild(sectionItem)
+                        sectionBody.appendChild(sectionItem)
+                    })
+                    sectionDiv.appendChild(sectionBody)
+                }
+
+                if (section["section list"]) {
+                    let sectionList = document.createElement('div')
+                    sectionBody.className = 'sectionlist'
+                    sectionList.innerHTML = section["section list"]
+                    sectionDiv.appendChild(sectionList)
+                }
+                document.getElementById(tab.id).appendChild(sectionDiv)
+            })
+            if (tab.disclaimer) {
+                let disclaimer = document.createElement('div')
+                disclaimer.className = 'menusection'
+                disclaimer.innerHTML = `<div class="menudisclaimer">${tab.disclaimer}</div>`
+                document.getElementById(tab.id).appendChild(disclaimer)
+            }
         })
-        sectionDiv.appendChild(sectionBody)
-        document.getElementById(key).appendChild(sectionDiv)
     })
-}
+    .catch(e => console.log(e))
+
+
 
 // update arrow indicators after tab interaction is complete
 document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
