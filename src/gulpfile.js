@@ -16,7 +16,7 @@ task('css', () =>
         src(cssInput)
         // Run Sass on those files
         .pipe(sass().on('error', sass.logError))
-        // Add vendor prefixes for browsers over 5% of US usage
+        // Add vendor prefixes for browsers over 1% of US usage
         .pipe(autoprefixer('>1% in US'))
         //Minify the css
         .pipe(cssmin())
@@ -36,8 +36,7 @@ task('javascript', () =>
     .pipe(gulp.dest(jsOutput))
 )
 
-
 task('deploy', function(done) {
-    ghPages.publish('../public', function (err) { console.log(err) })
+    ghPages.publish('../public', function (err) { if (err) { console.log(err) } })
     done()
 })

@@ -1,14 +1,15 @@
 const fs = require('fs')
-const menu = require('../public/assets/js/menu')
+const menu = require('../public/assets/js/menu.json')
 
-for (const key in menu){
-    menu[key].forEach((section, sectionIndex) => {
-        section["section items"].forEach((item, itemIndex) => {
-            if (item.image){
+menu.forEach(tab => {
+    tab.sections.forEach((section, sectionIndex) => {
+        if (section["section items"]) {
+            section["section items"].forEach((item, itemIndex) => {
+                if (item.image) {
 
-                const filename = `../public/menu/${item.image.split('.')[0]}.html`
-                
-                const data = `
+                    const filename = `../public/menu/${item.image.split('.')[0]}.html`
+
+                    const data = `
 <!DOCTYPE html>
 <html lang="en">
 
@@ -89,11 +90,12 @@ for (const key in menu){
 <script src="../assets/js/nav.js"></script>
 </body>
 </html>
-` 
-    
-                fs.writeFile(filename, data, (e) => e && console.error(e) )
+`
 
-            }
-        })
+                    fs.writeFile(filename, data, (e) => e && console.error(e))
+
+                }
+            })
+        }
     })
-}
+})

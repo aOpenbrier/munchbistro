@@ -1,14 +1,3 @@
-function openMenu() {
-    document.getElementById('nav-collapse').classList.toggle('open')
-}
-
-// Close the dropdown if the user clicks outside of it
-window.onclick = function (event) {
-    if (!event.target.matches('#navtrigger')) {
-        document.getElementById('nav-collapse').classList.remove('open');
-    }
-}
-
 function openTab(evt, tabId) {
     // Get all elements with class="tabcontent" and hide them
     let tabcontent = document.getElementsByClassName('tabcontent')
@@ -96,26 +85,30 @@ function arrowRight() {
     setTimeout(updateArrows, 500)
 }
 
-// Add menu content
-for (const key in menu) {
-    menu[key].forEach((section, sectionIndex) => {
-        let sectionDiv = document.createElement('div')
-        sectionDiv.className = 'menusection'
-        sectionDiv.innerHTML = `
+fetch('./assets/js/menu.json')
+    .then(r => r.json())
+    .then(menu => {
+        // Add menu content
+        menu.forEach(tab => {
+            tab.sections.forEach((section, sectionIndex) => {
+                let sectionDiv = document.createElement('div')
+                sectionDiv.className = 'menusection'
+                sectionDiv.innerHTML = `
         <h3 class="sectiontitle">${section["section title"]}</h3>
         ${section["section details"] ? `<p class="sectiondetails">${section["section details"]}</p>` : ''}
         `
-        let sectionBody = document.createElement('div')
-        sectionBody.className = 'sectionbody'
+                if (section["section items"]) {
+                    let sectionBody = document.createElement('div')
+                    sectionBody.className = 'sectionbody'
 
-        section["section items"].forEach((item, itemIndex) => {
-            let sectionItem = document.createElement('div')
-            sectionItem.className = 'sectionitem'
-            let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
-            sectionItem.innerHTML = `
+                    section["section items"].forEach((item, itemIndex) => {
+                        let sectionItem = document.createElement('div')
+                        sectionItem.className = 'sectionitem'
+                        let price = item.price ? item.price.toString().split('.')[1] ? item.price.toFixed(2) : item.price : ''
+                        sectionItem.innerHTML = `
 ${item.price ? `<p class="itemprice">${`${price}`}</p>` : ''}
-<h5 class="itemname">${item.name}</h5>
-<p class="itemdesc">${item.description}</p>
+${item.name ? `<h5 class="itemname">${item.name}</h5>` : ''}
+${item.description ? `<p class="itemdesc">${item.description}</p>` : ''}
 ${item["gf option"] ? `<p class="itemdietary">*Gluten-free optional</p>` : ''}
 ${item.vegan ? `<p class="itemdietary">*Vegan</p>` : ''}
 ${item.vegetarian ? `<p class="itemdietary">*Vegetarian</p>` : ''}
@@ -129,51 +122,30 @@ ${item.options ? `<p class="itemoptions">${item.options}</p>` : ''}
     ${item.featured ? `<p class="itemfeatured">FEATURED</p>` : ''}
 </div>
 `
-            sectionBody.appendChild(sectionItem)
-        })
-        sectionDiv.appendChild(sectionBody)
-        document.getElementById(key).appendChild(sectionDiv)
-    })
-}
+                        sectionBody.appendChild(sectionItem)
+                    })
+                    sectionDiv.appendChild(sectionBody)
+                }
 
-// Get Untappd beer menu
-fetch('https://business.untappd.com/api/v1/menus/62808?full=true', {
-    headers: { "Authorization": "Basic YW9wZW5icmllckBnbWFpbC5jb206RVVYcWFnYnVMN0pEaS1MS3FqUkg=" }
-}).then(r => r.json())
-    .then(r => {
-        console.log(r)
-        let beerMenu = document.createElement('div')
-        r.menu.sections.forEach(section => {
-            let beerSection = document.createElement('div')
-            beerSection.className = 'menusection'
-            beerSection.innerHTML = `<h3 class="sectiontitle">${section.name}</h3>`
-            let sectionBody = document.createElement('div')
-            sectionBody.className = 'sectionbody'
-            section.items.forEach(item => {
-                let sectionItem = document.createElement('div')
-                sectionItem.className = 'sectionitem'
-
-                let containerIndex = 0
-                // check if beer is on tap wall, would include 1 oz pricing
-                item.containers.forEach((container, i) => {
-                    if (container.container_size.ounces == 1.0) {
-                        containerIndex = i
-                    }
-                })
-                sectionItem.innerHTML = `
-            ${item.label_image ? `<a href="https://untappd.com/b/${item.untappd_beer_slug}/${item.untappd_id}"><img class="beerimage" src="${item.label_image}"></a>` : ''}
-<a href="https://untappd.com/b/${item.untappd_beer_slug}/${item.untappd_id}"><h5 class="itemname">${item.name || ''}</h5></a>
-<p class="itemdesc">${item.brewery || ''}, ${item.brewery_location || ''}</p>
-<p class="beerprice">${parseInt(item.containers[containerIndex].container_size.ounces) == 1 ? 'Oz. ' : item.containers[containerIndex].container_size.name || ''} $${item.containers[containerIndex].price || ''}</p>
-`
-                sectionBody.appendChild(sectionItem)
+                if (section["section list"]) {
+                    let sectionList = document.createElement('div')
+                    sectionList.className = 'sectionlist'
+                    sectionList.innerHTML = section["section list"]
+                    sectionDiv.appendChild(sectionList)
+                }
+                document.getElementById(tab.id).appendChild(sectionDiv)
             })
-            beerSection.appendChild(sectionBody)
-            beerMenu.appendChild(beerSection)
+            if (tab.disclaimer) {
+                let disclaimer = document.createElement('div')
+                disclaimer.className = 'menusection'
+                disclaimer.innerHTML = `<div class="menudisclaimer">${tab.disclaimer}</div>`
+                document.getElementById(tab.id).appendChild(disclaimer)
+            }
         })
+    })
+    .catch(e => console.log(e))
 
-        document.getElementById('menubeer').appendChild(beerMenu)
-    }).catch(e => console.error(e))
+
 
 // update arrow indicators after tab interaction is complete
 document.getElementById('menutabs').addEventListener('touchstart', menuScrolled)
