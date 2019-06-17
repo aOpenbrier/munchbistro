@@ -250,7 +250,7 @@
             "image": "TomYumSoup.jpg"
           },
           {
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu + $0 .50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3<br>\n                    <br>\n                    side order: <br>\n                    white rice&nbsp;$1, brown rice&nbsp;$2 <br>\n                    <br>\n                    Seafood(shrimp, squid, fish, mussel, scallop) Hot&nbsp;Pot&nbsp;$19 | Chicken&nbsp;Hot&nbsp;Pot&nbsp;$14 | Chicken&nbsp;Bowl&nbsp;$8.50 | Shrimp&nbsp;Hot&nbsp;Pot&nbsp;$16 | Shrimp&nbsp;Bowl&nbsp;$10.50 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu + $0 .50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3<br>\n <br>\n side order: <br>\n white rice&nbsp;$1, brown rice&nbsp;$2 <br>\n <br>\n Seafood(shrimp, squid, fish, mussel, scallop) Hot&nbsp;Pot&nbsp;$19 | Chicken&nbsp;Hot&nbsp;Pot&nbsp;$14 | Chicken&nbsp;Bowl&nbsp;$8.50 | Shrimp&nbsp;Hot&nbsp;Pot&nbsp;$16 | Shrimp&nbsp;Bowl&nbsp;$10.50 ",
             "name": "Tom Kha",
             "description": "Hot & sour soup with fresh creamy coconut cream, lemongrass, lime juice, fresh chili, galangal, tomato and mushroom, topped with green onion and cilantro.",
             "image": "TomKha.jpg"
@@ -313,7 +313,7 @@
         "section items": [
           {
             "featured": true,
-            "extras": "substitution: <br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3",
+            "extras": "substitution: <br>\n pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3",
             "price": 11,
             "name": "Thai Pasta",
             "description": "Stir fried yakisoba noodles, fresh chili, onion, green onion, green bell pepper, broccoli, tomato and basil.",
@@ -326,27 +326,27 @@
             "image": "PadThaiTigerPrawn.jpg"
           },
           {
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
             "price": 11,
             "name": "Pad Thai",
             "description": "Stir fried Thai rice noodles, red onion, egg, green onion, bean sprouts and crushed peanuts."
           },
           {
             "featured": true,
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
             "price": 11,
             "name": "Pad See Ew",
             "description": "Stir fried flat rice noodles, egg and broccoli seasoned with sweet black soy sauce.",
             "image": "PadSeeEw.jpg"
           },
           {
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
             "price": 11,
             "name": "Pad Kee Mao",
             "description": "Stir fried flat rice noodles, Thai chili, garlic, red bell pepper, tomato, onion, green onion, broccoli and basil."
           },
           {
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50 <br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3",
             "price": 11,
             "name": "Chow Mein",
             "description": "Stir fried yakisoba noodles, celery, carrot, onion, green onion, cabbage and beansprouts."
@@ -371,13 +371,13 @@
             "image": "PineappleFriedRice.jpg"
           },
           {
-            "extras": "substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50<br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50<br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
             "price": 11,
             "name": "Spicy Fried Rice",
             "description": "Stir fried jasmine rice, fresh chili, white onion, green onion, green bell pepper, broccoli, tomato and basil."
           },
           {
-            "extras": "\n                substitution:<br>\n                    pork, fried tofu, soft tofu +&nbsp;$0.50<br>\n                    chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
+            "extras": "substitution:<br>\n pork, fried tofu, soft tofu +&nbsp;$0.50<br>\n chicken white meat +&nbsp;$1 | beef&nbsp;+&nbsp;$2 | shrimp&nbsp;+&nbsp;$3 ",
             "price": 11,
             "name": "Thai Fried Rice",
             "description": "Authentic stir fried Thai jasmine rice with green onion, white onion, tomato and egg.",
