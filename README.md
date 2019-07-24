@@ -3,8 +3,18 @@
 
 **Restaurant website build tools**
 
+## Update
+Unfortunately Munch Bistro closed permanently in May 2019  
+Check out the project for their original location, 
+Live Site: [www.munchthai.com](https://www.munchthai.com) 
+Code: [Munch Thai (GitHub)](https://github.com/aOpenbrier/munchthai)  
+
+## Content Management
+Separate Node application developed for restaurant to update menu and edit JSON data with easy web interface.  
+Code: [Munch Menu Editor (GitHub)](https://github.com/aOpenbrier/munchmenu)
+
 ## Deployment
-Development Build: [GitHub Pages](https://aopenbrier.github.io/munchbistro)
+Development Build: [GitHub Pages](https://www.adamopenbrier.com/munchbistro)
 
 ## Development setup
 Project uses Nodejs to execute JavaScript command line interface.
@@ -25,7 +35,8 @@ From within the `src` folder you can run the following gulp commands:
 - [Node.js](https://nodejs.org) - Execute JavaScript outside of the browser
 - [Gulp.js](httsp://gulpjs.com) - Streaming build system for front-end development
 - [Sass](https://sass-lang.com/) - Syntactically Awesome Style Sheets. CSS pre-processor
+
 ## Author
-Adam Openbrier
- &bull; [Portfolio](https://aopenbrier.github.io/portfolio.html)  
+Adam Openbrier  
+ &bull; [Portfolio](https://www.adamopenbrier.com/portfolio.html)  
  &bull; [GitHub](https://github.com/aOpenbrier)  
